@@ -5,9 +5,6 @@ permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
 
 {% include base_path %}
 
@@ -27,10 +24,15 @@ author_profile: true
     {% endfor %}
   {% endfor %}
 {% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
+  <h2>Journal Articles</h2>
+  <hr />
+  
+  <ul>
+    <li><strong>Aneise, A. J., Möhle, E., Risaro, D. B., & Schteingart, D.</strong> (2024). Climate change. Argendata. Fundar.</li>
+    <li><strong>Risaro, D. B.</strong> (2024). Gender, Work, and Income Index [Source code]. GitHub.</li>
+    <li><strong>Fernández Erlauer, M., Risaro, D. B., Puglia, M. de las N., & Pérez Ramírez, V.</strong> (2023). How do women work in Argentine provinces?: Gender, Work, and Income Index. Buenos Aires: Fundar.</li>
+    <li><strong>Chidichimo, M. P., et al.</strong> (2022). Physical and Geochemical Changes in the Southwest Atlantic Ocean. Ministry of Agriculture, Livestock, and Fisheries.</li>
+    <li><strong>Risaro, D. B., Urricariet, M. D. M., & Prudente, C.</strong> (2022). Women in Argentine Science, Technology and Innovation system: a deceiving equality. The Public Sphere Journal, Vol 10.</li>
+    <li><strong>Risaro, D. B., Chidichimo, M. P., & Piola, A. R.</strong> (2022). Interannual variability and trends of sea surface temperature around southern South America. Frontiers in Marine Science. <a href="https://www.frontiersin.org/articles/10.3389/fmars.2022.829144/full">Read more</a>.</li>
+  </ul>
 {% endif %}
-
-
-
