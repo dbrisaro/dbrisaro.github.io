@@ -7,5 +7,4 @@ venue: "School of Government, Universidad Torcuato Di Tella (UTDT)"
 date: 2023-01-01
 location: "Buenos Aires, Argentina"
 ---
-**Courses taught:**
 * **Digitalization and Data Use in the State**

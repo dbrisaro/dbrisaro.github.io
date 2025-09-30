@@ -1,7 +1,7 @@
 ---
 title: "Analysis of sea surface temperature trends on the Patagonian shelf based on satellite observations"
 collection: publications
-category: manuscripts
+category: "Thesis"
 permalink: /publication/2015-03-01-master-thesis
 excerpt: 'Master thesis analyzing sea surface temperature trends on the Patagonian shelf using satellite observations and oceanographic data analysis techniques.'
 date: 2015-03-01

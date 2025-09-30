@@ -1,7 +1,7 @@
 ---
 title: "Cambio climático"
 collection: publications
-category: manuscripts
+category: "Institutional Reports"
 permalink: /publication/2024-argendata-cambio-climatico
 excerpt: 'Investigación colaborativa sobre cambio climático en Argentina para Argendata, analizando tendencias de temperatura y sus impactos en el período 1961-2020.'
 date: 2024-01-01

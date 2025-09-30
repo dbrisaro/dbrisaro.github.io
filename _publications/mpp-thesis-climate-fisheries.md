@@ -1,7 +1,7 @@
 ---
 title: "La industria pesquera argentina y su vínculo con la variabilidad y el cambio climático: enfoques ambientales, económicos e institucionales"
 collection: publications
-category: manuscripts
+category: "Thesis"
 permalink: /publication/2025-02-01-mpp-thesis
 excerpt: 'Tesis de Maestría en Políticas Públicas analizando la influencia de la variabilidad y el cambio climático en la actividad pesquera marítima en Argentina, integrando enfoques ambientales, económicos e institucionales.'
 date: 2025-02-01

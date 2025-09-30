@@ -1,14 +1,7 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your entire site, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve -l -H localhost`. If you change this file, please restart the 
-# server process.
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Daniela Belén Risaro"
+title                    : " "
 title_separator          : "\n"
 name                     : &name "Daniela Belén Risaro"
 description              : &description "Climate Data Scientist | PhD in Atmospheric and Oceanic Sciences, specializing in data science and remote sensing for climate risk assessment."
@@ -29,7 +22,7 @@ author:
 
   # Academic websites
   googlescholar    : "https://scholar.google.com/citations?user=GsFKpKkAAAAJ&hl=es"
-  orcid            : "https://orcid.org/0000-0002-5900-1951"
+  # orcid            : "https://orcid.org/0000-0002-5900-1951"
   researchgate     : # URL
 
   # Repositories and software development
@@ -43,7 +36,7 @@ author:
   linkedin         : "daniela-belen-risaro"
   medium           : # URL
   telegram         : # URL
-  twitter          : "dbrisaro"
+  # twitter          : "dbrisaro"
   wikipedia        : # Username
   youtube          : # Username
 

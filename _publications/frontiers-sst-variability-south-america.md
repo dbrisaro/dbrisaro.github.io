@@ -1,7 +1,7 @@
 ---
 title: "Interannual Variability and Trends of Sea Surface Temperature Around Southern South America"
 collection: publications
-category: manuscripts
+category: "Peer-reviewed Articles"
 permalink: /publication/2022-frontiers-sst-variability
 excerpt: 'Analysis of SST interannual variability and trends around southern South America using 1982-2017 satellite data, revealing significant warming and cooling patterns on the Patagonian Shelf.'
 date: 2022-03-03

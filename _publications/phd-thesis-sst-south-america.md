@@ -1,7 +1,7 @@
 ---
 title: "Las tendencias de largo plazo de la temperatura superficial del mar alrededor de Sudamérica y su posible impacto ecológico"
 collection: publications
-category: manuscripts
+category: "Thesis"
 permalink: /publication/2020-12-21-phd-thesis
 excerpt: 'Tesis doctoral analizando tendencias de largo plazo de TSM alrededor de Sudamérica (1982-2017) y su impacto en ecosistemas marinos, con foco en la Plataforma Patagónica.'
 date: 2020-12-21

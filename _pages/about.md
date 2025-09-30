@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Welcome to my personal website! I am Daniela Belén Risaro, a Climate Data Scientist with a PhD in Atmospheric and Oceanic Sciences. My work focuses on climate risk assessment, environmental data analysis, and satellite imagery. Through innovative data-driven approaches, I contribute to advancing our understanding of climate variability and its impacts on ecosystems and society.
+Welcome to Daniuverse! I am Daniela Belén Risaro, a Climate Data Scientist with a PhD in Atmospheric and Oceanic Sciences. My work focuses on climate risk assessment, environmental data analysis, and satellite imagery. Through innovative data-driven approaches, I contribute to advancing our understanding of climate variability and its impacts on ecosystems and society.
 
 I have extensive experience working with geospatial datasets, applying machine learning techniques, and developing parametric models for climate risk insurance. My research spans a variety of topics, from sea surface temperature trends in South America to the development of open-source climate data for public policy.
 
