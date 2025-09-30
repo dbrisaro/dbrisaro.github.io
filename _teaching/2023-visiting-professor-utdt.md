@@ -8,9 +8,5 @@ date: 2023-01-01
 location: "Buenos Aires, Argentina"
 ---
 
-**Position:** Visiting Professor (2023–Present)  
-**Institution:** School of Government, Universidad Torcuato Di Tella (UTDT)
-
 **Courses taught:**
-
 * **Digitalization and Data Use in the State**

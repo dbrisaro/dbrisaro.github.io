@@ -1,5 +1,8 @@
 ---
-title: "Undegraduate Teaching Assistant - University of Buenos Aires (2014-2015)"
+title:**Courses taught:**
+* **Atmospheric and Oceanic Dynamics** (2015)
+* **Theoretical Oceanography** (2015)
+* **Introduction to Coastal Engineering** (2014)aduate Teaching Assistant - University of Buenos Aires (2014-2015)"
 collection: teaching
 type: "Assistant Teaching Assistant"
 permalink: /teaching/2014-assistant-teaching-assistant-uba

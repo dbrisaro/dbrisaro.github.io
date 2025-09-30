@@ -8,11 +8,7 @@ date: 2016-01-01
 location: "Buenos Aires, Argentina"
 ---
 
-**Position:** Teaching Assistant (2016–2017)  
-**Institution:** Department of Atmospheric and Oceanic Sciences, Faculty of Exact and Natural Sciences, University of Buenos Aires
-
 **Courses taught:**
-
 * **Atmospheric and Oceanic Dynamics** (2016–2017)
 * **General Circulation of the Ocean and Atmosphere** (2017)
 * **Theoretical Oceanography** (2016)
