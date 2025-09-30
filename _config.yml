@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Daniela Belén Risaro / Climate Data Scientist"
+title                    : "Daniela Belén Risaro"
 title_separator          : "\n"
 name                     : &name "Daniela Belén Risaro"
 description              : &description "Climate Data Scientist | PhD in Atmospheric and Oceanic Sciences, specializing in data science and remote sensing for climate risk assessment."
@@ -16,9 +16,6 @@ url                      : https://dbrisaro.github.io
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "dbrisaro/dbrisaro.github.io"
 
-# Site Author - The following control what appear as part of the author content on the side bar.
-#               If a field is blank the icon and link will not appear, otherwise it will be shown.
-#               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
   # avatar           : "Daniela Risaro foto perfil.jpg"

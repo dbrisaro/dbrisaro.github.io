@@ -9,7 +9,7 @@ venue: 'Argendata - Fundar'
 paperurl: 'https://argendata.fund.ar/topico/cambio-climatico/'
 citation: 'Aneise, A. J., Möhle, E., Risaro, D. B. y Schteingart, D. (2024). &quot;Cambio climático.&quot; <i>Argendata. Fundar</i>.'
 ---
-
+<!-- 
 Esta investigación forma parte de **Argendata**, un sitio de referencia con datos sobre Argentina que suma conocimiento basado en la evidencia al debate público. El proyecto busca construir la Argentina que sabemos posible, empezando por conocerla para poder transformarla.
 
 **Equipo de Investigación:**
@@ -48,4 +48,4 @@ Esta investigación contribuye al objetivo de Argendata de proporcionar datos co
 * Integración de datos climáticos nacionales e internacionales
 * Enfoque en comunicación de datos para política pública
 
-Esta colaboración representa la aplicación de expertise en ciencias del clima para la generación de conocimiento público y el fortalecimiento del debate democrático basado en evidencia.
+Esta colaboración representa la aplicación de expertise en ciencias del clima para la generación de conocimiento público y el fortalecimiento del debate democrático basado en evidencia. -->
