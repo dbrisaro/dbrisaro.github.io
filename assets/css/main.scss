@@ -1,6 +1,16 @@
 ---
 ---
-@import "vendor/breakpoint/breakpoint";
+
+/*
+ *    Minimal Mistakes Jekyll Theme
+ *
+ *  - Michael Rose
+ *  - mademistakes.com
+ *  - https://twitter.com/mmistakes
+ *
+*/
+
+@import "vendor/breakpoint/breakpoint"; // media query mixins
 @import "variables";
 @import "mixins";
 @import "vendor/susy/susy";
@@ -37,8 +47,8 @@
 }
 
 .masthead__menu {
-  margin-left: $sidebar-link-max-width + 20px;
-  @media (max-width: $sidebar-screen-min-width - 1) {
+  margin-left: 250px;
+  @media (max-width: 1023px) {
     margin-left: 0;
   }
 }
