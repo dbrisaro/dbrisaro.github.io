@@ -9,10 +9,10 @@
 # Basic Site Settings
 locale                   : "en-US"
 title                    : "Daniela Belén Risaro / Climate Data Scientist"
-title_separator          : "-"
+title_separator          : "\n"
 name                     : &name "Daniela Belén Risaro"
 description              : &description "Climate Data Scientist | PhD in Atmospheric and Oceanic Sciences, specializing in data science and remote sensing for climate risk assessment."
-url                      : https://dbrisaro.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://dbrisaro.github.io 
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "dbrisaro/dbrisaro.github.io"
 
@@ -21,57 +21,34 @@ repository               : "dbrisaro/dbrisaro.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  # avatar           : "Daniela Risaro foto perfil.jpg"
   name             : "Daniela Belén Risaro"
   pronouns         : "she/her"
   bio              : "Climate Data Scientist | PhD in Atmospheric and Oceanic Sciences, with experience in climate risk assessment, satellite imagery, and data science."
   location         : "Buenos Aires, Argentina"
-  employer         : "Fundar"
-  uri              : "https://linkedin.com/in/daniela-belen-risaro"
+#  employer         : "Fundar"
+#  uri              : "https://linkedin.com/in/daniela-belen-risaro"
   email            : "dbrisaro@gmail.com"
 
   # Academic websites
-  arxiv            : # URL - Update with the correct link to your profile
   googlescholar    : "https://scholar.google.com/citations?user=GsFKpKkAAAAJ&hl=es"
-  impactstory      : # URL
   orcid            : "https://orcid.org/0000-0002-5900-1951"
-  semantic         : # URL
-#  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   researchgate     : # URL
 
   # Repositories and software development
-  bitbucket        : # Username - Update with your username on the site
-  codepen          : # Username
-  dribbble         : # Username
   github           : "dbrisaro"
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
   # Social media
-#  bluesky          : "bsky.app" # Replace this with you Bluesky username
   facebook         : # Username
-  flickr           : # Username
-  foursquare       : # Username
-  goodreads        : # Username
-  google_plus      : # Username
-  keybase          : # Username
   instagram        : # Username
-  lastfm           : # Username
   linkedin         : "daniela-belen-risaro"
-  mastodon         : # URL
   medium           : # URL
-  pinterest        : # Username
-  soundcloud       : # Username
-  steam            : # Username
   telegram         : # URL
-  tumblr           : # Username
   twitter          : "dbrisaro"
-  vine             : # Username
-  weibo            : # Username
   wikipedia        : # Username
-  xing             : # Username
   youtube          : # Username
-  zhihu            : # Username
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
