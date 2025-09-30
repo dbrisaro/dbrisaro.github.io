@@ -1,6 +1,5 @@
 ---
 ---
-
 @import "vendor/breakpoint/breakpoint";
 @import "variables";
 @import "mixins";
@@ -35,4 +34,11 @@
   font-family: 'Helvetica Neue', Arial, sans-serif !important;
   font-size: 0.85em !important;
   font-weight: 400 !important;
+}
+
+.masthead__menu {
+  margin-left: $sidebar-link-max-width + 20px;
+  @media (max-width: $sidebar-screen-min-width - 1) {
+    margin-left: 0;
+  }
 }
