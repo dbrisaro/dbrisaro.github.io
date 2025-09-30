@@ -1,5 +1,5 @@
 ---
-title: "Visiting Professor - Universidad Torcuato Di Tella (2023-Present)"
+title: "Visiting Professor (2023-Present)"
 collection: teaching
 type: "Visiting Professor"
 permalink: /teaching/2023-visiting-professor-utdt
@@ -7,6 +7,5 @@ venue: "School of Government, Universidad Torcuato Di Tella (UTDT)"
 date: 2023-01-01
 location: "Buenos Aires, Argentina"
 ---
-
 **Courses taught:**
 * **Digitalization and Data Use in the State**
