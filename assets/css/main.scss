@@ -46,9 +46,9 @@
   font-weight: 400 !important;
 }
 
-.greedy-nav .visible-links {
-  margin-left: 250px;
+.masthead .greedy-nav .visible-links {
+  margin-left: 250px !important;
   @media (max-width: 1023px) {
-    margin-left: 0;
+    margin-left: 0 !important;
   }
 }
