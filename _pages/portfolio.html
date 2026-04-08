@@ -1,14 +1,35 @@
 ---
-layout: archive
-title: "Portfolio"
+layout: default
+title: Portfolio
 permalink: /portfolio/
-author_profile: true
 ---
 
-{% include base_path %}
+<h2>Portfolio</h2>
 
-
-{% for post in site.portfolio %}
-  {% include archive-single.html %}
-{% endfor %}
-
+<div class="portfolio-grid">
+  {% assign projects = site.portfolio | sort: "date" | reverse %}
+  {% for project in projects %}
+  {% unless project.title == "" %}
+  <div class="portfolio-card">
+    {% if project.image %}
+    <img class="portfolio-card__image" src="{{ project.image }}" alt="{{ project.title }}">
+    {% else %}
+    <div class="portfolio-card__image--placeholder">{{ project.category | default: "Project" }}</div>
+    {% endif %}
+    <div class="portfolio-card__body">
+      <h3 class="portfolio-card__title"><a href="{{ project.url }}">{{ project.title }}</a></h3>
+      {% if project.excerpt %}
+      <p class="portfolio-card__excerpt">{{ project.excerpt }}</p>
+      {% endif %}
+      {% if project.tags %}
+      <div class="portfolio-card__tags">
+        {% for tag in project.tags %}
+        <span class="portfolio-card__tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  {% endunless %}
+  {% endfor %}
+</div>

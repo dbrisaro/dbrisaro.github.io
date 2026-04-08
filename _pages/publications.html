@@ -1,68 +1,80 @@
 ---
-layout: archive
-title: "Publications"
+layout: default
+title: Publications
 permalink: /publications/
-author_profile: true
 ---
-
-<style>
-.page__content h2 {
-  font-size: 1.1em !important;
-  font-family: 'Helvetica Neue', Arial, sans-serif !important;
-  font-weight: 300 !important;
-  color: #555 !important;
-  margin-top: 25px !important;
-  margin-bottom: 15px !important;
-  text-transform: none !important;
-}
-</style>
-
-{% include base_path %}
 
 <h2>Peer-reviewed Articles</h2>
 
-{% for post in site.publications reversed %}
-  {% if post.category == 'Peer-reviewed Articles' %}
-    {% include archive-single.html %}
+{% assign peer = site.publications | where: "category", "Peer-reviewed Articles" | sort: "date" | reverse %}
+{% for post in peer %}
+<div class="publication">
+  <p class="publication__title">{% if post.paperurl %}<a href="{{ post.paperurl }}" target="_blank" rel="noopener">{{ post.title }}</a>{% else %}{{ post.title }}{% endif %}</p>
+  <p class="publication__venue">{{ post.venue }}, {{ post.date | date: "%Y" }}</p>
+  {% if post.paperurl %}
+  <div class="publication__links">
+    <a href="{{ post.paperurl }}" target="_blank" rel="noopener">Paper</a>
+  </div>
   {% endif %}
+</div>
 {% endfor %}
 
 <h2>Thesis</h2>
 
-{% for post in site.publications reversed %}
-  {% if post.category == 'Thesis' %}
-    {% include archive-single.html %}
+{% assign theses = site.publications | where: "category", "Thesis" | sort: "date" | reverse %}
+{% for post in theses %}
+<div class="publication">
+  <p class="publication__title">{% if post.paperurl %}<a href="{{ post.paperurl }}" target="_blank" rel="noopener">{{ post.title }}</a>{% else %}{{ post.title }}{% endif %}</p>
+  <p class="publication__venue">{{ post.venue }}, {{ post.date | date: "%Y" }}</p>
+  {% if post.paperurl %}
+  <div class="publication__links">
+    <a href="{{ post.paperurl }}" target="_blank" rel="noopener">Paper</a>
+  </div>
   {% endif %}
+</div>
 {% endfor %}
 
 <h2>Institutional Reports</h2>
 
-{% for post in site.publications reversed %}
-  {% if post.category == 'Institutional Reports' %}
-    {% include archive-single.html %}
+{% assign reports = site.publications | where: "category", "Institutional Reports" | sort: "date" | reverse %}
+{% for post in reports %}
+<div class="publication">
+  <p class="publication__title">{% if post.paperurl %}<a href="{{ post.paperurl }}" target="_blank" rel="noopener">{{ post.title }}</a>{% else %}{{ post.title }}{% endif %}</p>
+  <p class="publication__venue">{{ post.venue }}, {{ post.date | date: "%Y" }}</p>
+  {% if post.paperurl %}
+  <div class="publication__links">
+    <a href="{{ post.paperurl }}" target="_blank" rel="noopener">Paper</a>
+  </div>
   {% endif %}
+</div>
 {% endfor %}
 
 <h2>Opinion Articles</h2>
 
-{% for post in site.publications reversed %}
-  {% if post.category == 'Opinion Articles' %}
-    {% include archive-single.html %}
+{% assign opinion = site.publications | where: "category", "Opinion Articles" | sort: "date" | reverse %}
+{% for post in opinion %}
+<div class="publication">
+  <p class="publication__title">{% if post.paperurl %}<a href="{{ post.paperurl }}" target="_blank" rel="noopener">{{ post.title }}</a>{% else %}{{ post.title }}{% endif %}</p>
+  <p class="publication__venue">{{ post.venue }}, {{ post.date | date: "%Y" }}</p>
+  {% if post.paperurl %}
+  <div class="publication__links">
+    <a href="{{ post.paperurl }}" target="_blank" rel="noopener">Paper</a>
+  </div>
   {% endif %}
+</div>
 {% endfor %}
 
-<h2>Open Data & Code</h2>
+<h2>Open Data &amp; Code</h2>
 
-{% for post in site.publications reversed %}
-  {% if post.category == 'Open Data & Code' %}
-    {% include archive-single.html %}
+{% assign opendata = site.publications | where: "category", "Open Data & Code" | sort: "date" | reverse %}
+{% for post in opendata %}
+<div class="publication">
+  <p class="publication__title">{% if post.paperurl %}<a href="{{ post.paperurl }}" target="_blank" rel="noopener">{{ post.title }}</a>{% else %}{{ post.title }}{% endif %}</p>
+  <p class="publication__venue">{{ post.venue }}, {{ post.date | date: "%Y" }}</p>
+  {% if post.paperurl %}
+  <div class="publication__links">
+    <a href="{{ post.paperurl }}" target="_blank" rel="noopener">Code</a>
+  </div>
   {% endif %}
-{% endfor %}
-
-<h2>Cruise Reports</h2>
-
-{% for post in site.publications reversed %}
-  {% if post.category == 'Cruise Reports' %}
-    {% include archive-single.html %}
-  {% endif %}
+</div>
 {% endfor %}

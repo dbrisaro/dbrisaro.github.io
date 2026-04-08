@@ -1,31 +1,110 @@
----
-layout: compress
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="author" content="{{ site.author.name }}">
 
-{% include base_path %}
+  <title>{% if page.title and page.title != site.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
 
-<!doctype html>
-<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
-  <head>
-    {% include head.html %}
-    {% include head/custom.html %}
-  </head>
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 
-  <body>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{% if page.title and page.title != site.title %}{{ page.title }} | {% endif %}{{ site.title }}">
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}{{ site.author.avatar }}">
+  <meta property="og:site_name" content="{{ site.title }}">
 
-    {% include browser-upgrade.html %}
-    {% include masthead.html %}
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
 
-    {{ content }}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&family=Barlow:wght@600&family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="/design/style.css">
+</head>
+<body>
 
-    <div class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
-        {% include footer.html %}
-      </footer>
-    </div>
+  <header class="masthead">
+    <nav class="masthead-nav">
+      <a href="/">Home</a>
+      <a href="/publications/">Publications</a>
+      <a href="/portfolio/">Portfolio</a>
+      <a href="/cv/">CV</a>
+      <a href="/teaching/">Teaching</a>
+    </nav>
+  </header>
 
-    {% include scripts.html %}
+  <div class="wrapper">
 
-  </body>
+    <aside class="sidebar">
+      <div class="author-profile">
+
+        {% if site.author.avatar %}
+        <img class="author__avatar" src="{{ site.author.avatar }}" alt="{{ site.author.name }}">
+        {% endif %}
+
+        <div class="author__content">
+          <h1 class="author__name">{{ site.author.name }}</h1>
+          {% if site.author.bio %}
+          <p class="author__bio">{{ site.author.bio }}</p>
+          {% endif %}
+        </div>
+
+        <ul class="author__urls">
+          {% if site.author.location %}
+          <li class="author__info">
+            <i class="fas fa-fw fa-location-dot" aria-hidden="true"></i>
+            {{ site.author.location }}
+          </li>
+          {% endif %}
+          {% if site.author.employer %}
+          <li class="author__info">
+            <i class="fas fa-fw fa-building-columns" aria-hidden="true"></i>
+            {{ site.author.employer }}
+          </li>
+          {% endif %}
+          {% if site.author.email %}
+          <li>
+            <a href="mailto:{{ site.author.email }}">
+              <i class="fas fa-fw fa-envelope" aria-hidden="true"></i> Email
+            </a>
+          </li>
+          {% endif %}
+          {% if site.author.googlescholar %}
+          <li>
+            <a href="{{ site.author.googlescholar }}" target="_blank" rel="noopener">
+              <i class="ai ai-google-scholar ai-fw" aria-hidden="true"></i> Google Scholar
+            </a>
+          </li>
+          {% endif %}
+          {% if site.author.linkedin %}
+          <li>
+            <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" target="_blank" rel="noopener">
+              <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn
+            </a>
+          </li>
+          {% endif %}
+          {% if site.author.github %}
+          <li>
+            <a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener">
+              <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+
+      </div>
+    </aside>
+
+    <main class="main-content">
+      {{ content }}
+    </main>
+
+  </div>
+
+</body>
 </html>

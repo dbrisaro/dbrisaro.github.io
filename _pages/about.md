@@ -1,30 +1,53 @@
 ---
+layout: default
 permalink: /
 title: ""
-author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
 
-**Welcome to the Daniuverse!**
+## About Me
 
-I'm Daniela. "Daniu" is what my parents have called me since I was little, and I've built an identity around that nickname. Curiosity is a constant in my life. Much of my motivation and energy goes into learning new things. The more aware I am of how much I don't know, the more excited I become about the journey.
+Curiosity is a constant in my life, and it's what led me to become a scientist.
 
-It was natural, then, that much of who I am took shape around study. Among many things, I find fascinating the world that sustains our lives. With that drive, I studied Physical Oceanography at the University of Buenos Aires, where I later completed a PhD in Atmospheric and Oceanic Sciences. Afterwards I pursued a Master's in Public Policy at Torcuato Di Tella University, because I wanted to add a different perspective on how scientific knowledge can connect with collective decision-making.
+I've always been fascinated by the ocean, its mysteries, and the challenge of understanding it. That drive took me through a degree in Physical Oceanography and a PhD in Atmospheric and Oceanic Sciences at the University of Buenos Aires. But I've never wanted to stop learning, and I've always cared about the applications of science, so I later pursued a Master's in Public Policy at Universidad Torcuato Di Tella.
 
-Studying climate is both my profession and a deep way of understanding the world. Today my work focuses on developing parametric models for climate-risk insurance. I lead projects end to end, from initial research to the design of new parametric solutions. To analyze climate variability, I work with geospatial data, large-scale satellite and reanalysis information, apply machine-learning techniques, and design reproducible workflows with open-source tools.
+I'm interested in all the ways we can observe our planet: from thousands of kilometers above with sensors on board satellites, from the ground with in-situ measurements, or through climate modeling tools. Climate risk is where those tools become most meaningful to me. Today I work on parametric insurance products, designing solutions to monitor risk and measure losses from natural disasters using satellites, machine learning, and data science. I lead the scientific agenda and coordinate the team behind those products.
 
-Thank you for visiting this space. If you'd like to collaborate, email me at [dbrisaro@gmail.com](mailto:dbrisaro@gmail.com) or connect on [LinkedIn](https://linkedin.com/in/daniela-belen-risaro).
+I'm stubborn about learning. I love natural systems and I'm genuinely passionate about how our world works and how the climate shapes it.
+
+When I'm not doing any of that, I'm probably chasing something new. I've been playing piano since I was nine, and I swim whenever I get the chance.
+
+If you'd like to collaborate, reach me at [dbrisaro@gmail.com](mailto:dbrisaro@gmail.com) or on [LinkedIn](https://linkedin.com/in/daniela-belen-risaro).
 
 ---
 
-**¡Bienvenidos al Daniuverso!**
+La curiosidad es una constante en mi vida, y es lo que me llevó a ser científica.
 
-Soy Daniela. "Daniu" me dicen mis papás desde chica, y con ese apodo construí una identidad. Con seguridad puedo afirmar que la curiosidad es una constante en mi vida. Gran parte de mi motivación y de mi energía está en aprender cosas nuevas. Cuanto más consciente soy de cuánto no sé, más me entusiasma el proceso.
+Siempre me fascinó el océano, sus misterios y el desafío de entenderlo. Esa motivación me llevó a estudiar Oceanografía Física y hacer un doctorado en Ciencias de la Atmósfera y los Océanos en la Universidad de Buenos Aires. Pero nunca quise dejar de aprender, y siempre me importaron las aplicaciones de la ciencia, así que luego cursé una Maestría en Políticas Públicas en la Universidad Torcuato Di Tella.
 
-Era natural, entonces, que mucho de lo que soy se consolidara alrededor de mis estudios. Entre otras cosas, me resulta fascinante el mundo que sostiene nuestra vida. Con esa motivación estudié Oceanografía Física en la Facultad de Ciencias Exactas y Naturales de la UBA, donde después hice un doctorado en Ciencias de la Atmósfera y los Océanos. Más tarde cursé una Maestría en Políticas Públicas en la Universidad Torcuato Di Tella, porque quería sumar una perspectiva distinta sobre cómo el conocimiento científico puede dialogar con las decisiones colectivas.
+Me interesan las formas de observar nuestro planeta: desde miles de kilómetros de altura con sensores a bordo de satélites, con mediciones in situ desde el terreno o con herramientas de modelado climático. El riesgo climático es donde esas herramientas cobran más sentido para mí. Hoy trabajo en productos de seguros paramétricos, diseñando soluciones para monitorear riesgo y medir pérdidas por catástrofes naturales usando satélites, machine learning y ciencia de datos. Lidero la agenda científica y coordino el equipo detrás de esos productos.
 
-Estudiar el clima es mi profesión y también una forma profunda de comprender el mundo. Actualmente mi trabajo se centra en desarrollar modelos paramétricos para seguros frente a riesgos climáticos. Lidero proyectos de punta a punta, desde la investigación inicial hasta la construcción de nuevas soluciones paramétricas. Para analizar la variabilidad del clima trabajo con datos geoespaciales, utilizo información satelital y de reanálisis a gran escala, aplico técnicas de aprendizaje automático y diseño flujos reproducibles con herramientas de código abierto.
+Soy tenaz en mi forma de aprender. Me apasionan los sistemas naturales y genuinamente me interesa cómo funciona el mundo en el que vivimos y cómo el clima lo moldea.
 
-Gracias por visitar este espacio. Si te gustaría colaborar, escribime a [dbrisaro@gmail.com](mailto:dbrisaro@gmail.com) o conectemos por [LinkedIn](https://linkedin.com/in/daniela-belen-risaro).
+Cuando no estoy haciendo nada de eso, probablemente estoy aprendiendo algo nuevo. Toco el piano desde los nueve años y nado cada vez que puedo.
+
+Si te interesa colaborar, escribime a [dbrisaro@gmail.com](mailto:dbrisaro@gmail.com) o conectá conmigo en [LinkedIn](https://linkedin.com/in/daniela-belen-risaro).
+
+## Recent News
+
+<table class="news-table">
+  <tr>
+    <td>Feb 2025</td>
+    <td>Defended my Master's thesis in Public Policy at Universidad Torcuato Di Tella.</td>
+  </tr>
+  <tr>
+    <td>Jan 2024</td>
+    <td>Joined <strong>Suyana - Climate Insurance</strong> as Lead Climate Scientist, developing parametric models for climate risk.</td>
+  </tr>
+  <tr>
+    <td>Jul 2022</td>
+    <td>Started as Senior Data Scientist at <strong>Fundar</strong>, leading open-source climate data initiatives.</td>
+  </tr>
+</table>

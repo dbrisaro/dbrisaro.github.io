@@ -1,77 +1,134 @@
 ---
-layout: archive
-title: "CV"
+layout: default
+title: CV
 permalink: /cv/
-author_profile: true
 redirect_from:
   - /resume
 ---
 
-{% include base_path %}
+## CV
 
-Education
-======
-* **Master of Public Policy**  
-  *Torcuato Di Tella University* – December 2024  
-  *Thesis:* The influence of climate variability on Argentina's fishing industry based on future climate projections.
+<div class="cv-downloads">
+  <a href="/files/cv.pdf" class="button" target="_blank">Download CV</a>
+</div>
 
-* **Ph.D. in Atmospheric and Oceanic Sciences**  
-  *University of Buenos Aires* – December 2020  
-  *Thesis:* Long-term trends of the sea surface temperature around South America and its ecological impact.
+## Education
 
-* **Master in Physical Oceanography**  
-  *University of Buenos Aires* – March 2015  
-  *Thesis:* Analysis of sea surface temperature trends on the Patagonian shelf based on satellite observations.
+<div class="cv-entry">
+  <div class="cv-entry__date">Dec 2024</div>
+  <div class="cv-entry__body">
+    <p class="cv-entry__title">Master of Public Policy</p>
+    <p class="cv-entry__sub">Universidad Torcuato Di Tella</p>
+    <p class="cv-entry__detail">Thesis: The influence of climate variability on Argentina's fishing industry based on future climate projections.</p>
+  </div>
+</div>
 
-Work experience
-======
-* **Lead Climate Scientist (part-time)**  
-  *Suyana - Climate Insurance* – January 2024 - Present  
-  * Developed parametric models for climate risk insurance, improving risk assessment methods.
-  * Integrated field and satellite data to develop and validate high-accuracy models for climate risk assessments.
-  * Conducted detection and analysis of extreme weather events such as storm surges, floods, and droughts.
-  * Leveraged reanalysis data to enhance climate event predictions.
+<div class="cv-entry">
+  <div class="cv-entry__date">Dec 2020</div>
+  <div class="cv-entry__body">
+    <p class="cv-entry__title">Ph.D. in Atmospheric and Oceanic Sciences</p>
+    <p class="cv-entry__sub">University of Buenos Aires</p>
+    <p class="cv-entry__detail">Thesis: Long-term trends of the sea surface temperature around South America and its ecological impact.</p>
+  </div>
+</div>
 
-* **Senior Data Scientist**  
-  *Fundar - Foundation for Argentinean Development* – July 2022 - Present  
-  * Led the development of open-source climate data, improving accessibility for public policy use.
-  * Applied advanced data analysis techniques to support evidence-based decision-making.
-  * Authored technical documentation to communicate results and recommendations effectively to clients.
+<div class="cv-entry">
+  <div class="cv-entry__date">Mar 2015</div>
+  <div class="cv-entry__body">
+    <p class="cv-entry__title">Master in Physical Oceanography</p>
+    <p class="cv-entry__sub">University of Buenos Aires</p>
+    <p class="cv-entry__detail">Thesis: Analysis of sea surface temperature trends on the Patagonian shelf based on satellite observations.</p>
+  </div>
+</div>
 
-* **Scientific Advisor**  
-  *Secretary of Science and Technology of the Province of Buenos Aires* – August 2020 - July 2022  
-  * Led open data initiatives to enhance accessibility for a public observatory.
-  * Coordinated with public sector stakeholders to support data management and public policy formulation.
+## Work Experience
 
-Skills
-======
-* **Programming & Scripting:** Python, MATLAB, R, C++
-* **Machine Learning Techniques:** SVM, Random Forests, regression, classification, clustering, anomaly detection
-* **Data Analysis & Visualization:** Pandas, NumPy, scikit-learn, SciPy, Matplotlib, Seaborn, Plotly, Cartopy
-* **Geographic Information Systems & Remote Sensing:** QGIS, ArcGIS, Google Earth Engine, Geopandas, Pysal, Xarray
-* **Satellite Products & Reanalysis Data:** MODIS, Landsat, Sentinel-2, ERA5, NCEP/NCAR, CFSR
-* **Climate Data Operations:** CDO, NCO operators for handling climate databases in Linux environments
-* **Technical Writing:** Research proposals, peer-reviewed publications, policy briefs
+<div class="cv-entry">
+  <div class="cv-entry__date">Jan 2024 – Present</div>
+  <div class="cv-entry__body">
+    <p class="cv-entry__title">Lead Climate Scientist (part-time)</p>
+    <p class="cv-entry__sub">Suyana – Climate Insurance</p>
+    <p class="cv-entry__detail">Developed parametric models for climate risk insurance. Integrated field and satellite data for high-accuracy climate risk assessments. Conducted detection and analysis of extreme weather events.</p>
+  </div>
+</div>
 
-Publications
-======
-<ul>{% for post in site.publications reversed %}
-  {% include archive-single-cv.html %}
-{% endfor %}</ul>
-<!-- 
-Talks
-======
-<ul>{% for post in site.talks reversed %}
-  {% include archive-single-talk-cv.html  %}
-{% endfor %}</ul> -->
+<div class="cv-entry">
+  <div class="cv-entry__date">Jul 2022 – Present</div>
+  <div class="cv-entry__body">
+    <p class="cv-entry__title">Senior Data Scientist</p>
+    <p class="cv-entry__sub">Fundar – Foundation for Argentinean Development</p>
+    <p class="cv-entry__detail">Led development of open-source climate data. Applied advanced data analysis for evidence-based policy. Authored technical documentation for clients and stakeholders.</p>
+  </div>
+</div>
 
-Teaching
-======
-<ul>{% for post in site.teaching reversed %}
-  {% include archive-single-cv.html %}
-{% endfor %}</ul>
+<div class="cv-entry">
+  <div class="cv-entry__date">Aug 2020 – Jul 2022</div>
+  <div class="cv-entry__body">
+    <p class="cv-entry__title">Scientific Advisor</p>
+    <p class="cv-entry__sub">Secretary of Science and Technology, Province of Buenos Aires</p>
+    <p class="cv-entry__detail">Led open data initiatives for a public observatory. Coordinated with public sector stakeholders on data management and policy formulation.</p>
+  </div>
+</div>
 
-Service and leadership
-======
-* Hosted the Franco-Argentine Institute for Climate Studies and Its Impacts (IFAECI) Days in 2024, coordinating working groups and facilitating dialogue.
-* Contributed to public policy discussions at national and international levels.
+## Skills
+
+<div class="cv-entry">
+  <div class="cv-entry__date">Programming</div>
+  <div class="cv-entry__body">
+    <p class="cv-entry__sub">Python · MATLAB · R · C++</p>
+  </div>
+</div>
+
+<div class="cv-entry">
+  <div class="cv-entry__date">ML & Data</div>
+  <div class="cv-entry__body">
+    <p class="cv-entry__sub">Pandas · NumPy · scikit-learn · SciPy · Matplotlib · Seaborn · Plotly · Cartopy · SVM · Random Forests · regression · clustering · anomaly detection</p>
+  </div>
+</div>
+
+<div class="cv-entry">
+  <div class="cv-entry__date">GIS & RS</div>
+  <div class="cv-entry__body">
+    <p class="cv-entry__sub">QGIS · ArcGIS · Google Earth Engine · Geopandas · Pysal · Xarray · MODIS · Landsat · Sentinel-2 · ERA5 · NCEP/NCAR · CFSR</p>
+  </div>
+</div>
+
+## Publications
+
+{% assign pubs = site.publications | sort: "date" | reverse %}
+{% for post in pubs %}
+{% unless post.title == "" or post.title contains "paper-title" %}
+<div class="cv-entry">
+  <div class="cv-entry__date">{{ post.date | date: "%Y" }}</div>
+  <div class="cv-entry__body">
+    <p class="cv-entry__title">{% if post.paperurl %}<a href="{{ post.paperurl }}" target="_blank" rel="noopener">{{ post.title }}</a>{% else %}{{ post.title }}{% endif %}</p>
+    <p class="cv-entry__sub"><em>{{ post.category }}</em> · {{ post.venue }}</p>
+  </div>
+</div>
+{% endunless %}
+{% endfor %}
+
+## Teaching
+
+{% assign teaching = site.teaching | sort: "date" | reverse %}
+{% for post in teaching %}
+{% unless post.title == "" %}
+<div class="cv-entry">
+  <div class="cv-entry__date">{{ post.date | date: "%Y" }}</div>
+  <div class="cv-entry__body">
+    <p class="cv-entry__title">{{ post.title }}</p>
+    <p class="cv-entry__sub">{{ post.venue }}</p>
+  </div>
+</div>
+{% endunless %}
+{% endfor %}
+
+## Service & Leadership
+
+<div class="cv-entry">
+  <div class="cv-entry__date">2024</div>
+  <div class="cv-entry__body">
+    <p class="cv-entry__title">Host, IFAECI Days</p>
+    <p class="cv-entry__sub">Franco-Argentine Institute for Climate Studies and Its Impacts, coordinating working groups and facilitating dialogue.</p>
+  </div>
+</div>

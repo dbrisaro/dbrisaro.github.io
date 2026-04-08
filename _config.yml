@@ -11,7 +11,7 @@ repository               : "dbrisaro/dbrisaro.github.io"
 
 author:
   # Biographic information
-  # avatar           : "Daniela Risaro foto perfil.jpg"
+  avatar           : "/images/profile-web.jpg"
   name             : "Daniela Belén Risaro"
   pronouns         : "she/her"
   bio              : "Climate Data Scientist | PhD in Atmospheric and Oceanic Sciences, with experience in climate risk assessment, satellite imagery, and data science."
@@ -210,8 +210,7 @@ defaults:
       path: ""
       type: pages
     values:
-      layout: single
-      author_profile: true
+      layout: default
   # _teaching
   - scope:
       path: ""
@@ -235,10 +234,7 @@ defaults:
       path: ""
       type: portfolio
     values:
-      layout: single
-      author_profile: true
-      share: true
-      comment: true
+      layout: default
   # _talks
   - scope:
       path: ""
@@ -265,18 +261,7 @@ timezone: Etc/UTC # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 # Plugins
 plugins:
   - jekyll-feed
-  - jekyll-gist
-  - jekyll-paginate
   - jekyll-sitemap
-  - jemoji
-
-# Mimic GitHub Pages with --safe
-whitelist:
-  - jekyll-feed
-  - jekyll-gist
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jemoji
 
 
 # Archives

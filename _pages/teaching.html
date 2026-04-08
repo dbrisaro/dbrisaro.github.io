@@ -1,20 +1,23 @@
 ---
-layout: archive
-title: "Teaching"
+layout: default
+title: Teaching
 permalink: /teaching/
-author_profile: true
 ---
 
-{% include base_path %}
+<h2>Teaching</h2>
 
-{% for post in site.teaching reversed %}
-  <div class="list__item" style="margin-bottom: 20px;">
-    <article class="archive__item">
-      <h3 style="margin-bottom: 8px; font-size: 18px; color: #333;">{{ post.title }}</h3>
-      <p style="margin: 4px 0; font-size: 14px; color: #666; font-style: italic;">{{ post.venue }}</p>
-      <div style="margin-top: 8px; font-size: 14px; line-height: 1;">
-        {{ post.content }}
-      </div>
-    </article>
+{% assign teaching = site.teaching | sort: "date" | reverse %}
+{% for post in teaching %}
+{% unless post.title == "" %}
+<div class="cv-entry">
+  <div class="cv-entry__date">{{ post.date | date: "%Y" }}</div>
+  <div class="cv-entry__body">
+    <p class="cv-entry__title">{{ post.title }}</p>
+    <p class="cv-entry__sub">{{ post.venue }}</p>
+    {% if post.content != "" %}
+    <div class="cv-entry__detail">{{ post.content }}</div>
+    {% endif %}
   </div>
+</div>
+{% endunless %}
 {% endfor %}
