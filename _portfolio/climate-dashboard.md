@@ -40,4 +40,6 @@ This dashboard brings together the most relevant climate and oceanic indices in 
 
 ## Dashboard
 
-**Status:** under development. Dashboard coming soon.
+The dashboard is live. You can explore it here:
+
+<a href="https://climate-variability-dashboard.streamlit.app/" target="_blank" class="btn">Open Dashboard</a>
