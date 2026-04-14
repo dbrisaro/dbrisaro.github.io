@@ -1,0 +1,32 @@
+---
+layout: default
+title: "Blog"
+permalink: /blog/
+---
+
+<h1>Blog</h1>
+
+{% if site.posts.size > 0 %}
+<ul class="blog-list">
+  {% for post in site.posts %}
+  <li class="blog-item">
+    <span class="blog-date">{{ post.date | date: "%B %Y" }}</span>
+    <div class="blog-content">
+      <a href="{{ post.url }}" class="blog-title">{{ post.title }}</a>
+      {% if post.excerpt %}
+      <p class="blog-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+      {% endif %}
+      {% if post.tags.size > 0 %}
+      <div class="blog-tags">
+        {% for tag in post.tags %}
+        <span class="project-tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No posts yet. Coming soon.</p>
+{% endif %}
