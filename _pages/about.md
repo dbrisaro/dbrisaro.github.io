@@ -11,11 +11,11 @@ redirect_from:
 
 Curiosity is a constant in my life, and it's what led me to become a scientist.
 
-I've always been fascinated by the ocean, its mysteries, and the challenge of understanding it. That drive took me through a degree in Physical Oceanography and a PhD in Atmospheric and Oceanic Sciences at the University of Buenos Aires. But I've never wanted to stop learning, and I've always cared about the applications of science, so I later pursued a Master's in Public Policy at Universidad Torcuato Di Tella.
+I've always been fascinated by the ocean and the challenge of understanding it. I hold a degree in Physical Oceanography and a PhD in Atmospheric and Oceanic Sciences at the University of Buenos Aires, and a Master's in Public Policy at Universidad Torcuato Di Tella.
 
-I'm interested in all the ways we can observe our planet: from thousands of kilometers above with sensors on board satellites, from the ground with in-situ measurements, or through climate modeling tools. Climate risk is where those tools become most meaningful to me. Today I work on parametric insurance products, designing solutions to monitor risk and measure losses from natural disasters using satellites, machine learning, and data science. I lead the scientific agenda and coordinate the team behind those products.
+I'm a Climate Data Scientist working at the intersection of Earth observation, geospatial analysis, and climate risk. My core work is ensuring the scientific robustness of climate risk products: selecting the right data sources, validating methods, and translating Earth observation science into models that hold up under scrutiny. I work across the full product cycle, from problem framing and satellite data pipeline design to final pricing. I lead a technical team building parametric products for frost, drought, heatwaves, storm surges, and extreme waves across Latin America, using MODIS, VIIRS, AVHRR, and Sentinel imagery, machine learning, and reanalysis datasets like ERA5 and CMIP6.
 
-I'm stubborn about learning. I love natural systems and I'm genuinely passionate about how our world works and how the climate shapes it.
+I'm stubborn about learning. I love natural systems and I'm passionate about how our world works and how the climate shapes it.
 
 When I'm not doing any of that, I'm probably chasing something new. I've been playing piano since I was nine, and I swim whenever I get the chance.
 
@@ -25,11 +25,11 @@ If you'd like to collaborate, reach me at [dbrisaro@gmail.com](mailto:dbrisaro@g
 
 La curiosidad es una constante en mi vida, y es lo que me llevó a ser científica.
 
-Siempre me fascinó el océano, sus misterios y el desafío de entenderlo. Esa motivación me llevó a estudiar Oceanografía Física y hacer un doctorado en Ciencias de la Atmósfera y los Océanos en la Universidad de Buenos Aires. Pero nunca quise dejar de aprender, y siempre me importaron las aplicaciones de la ciencia, así que luego cursé una Maestría en Políticas Públicas en la Universidad Torcuato Di Tella.
+Siempre me intrigó el océano y entenderlo es un arduo desafío. Soy licenciada en Oceanografía Física y Doctora en Ciencias de la Atmósfera y los Océanos de la Universidad de Buenos Aires, y Magister en Políticas Públicas de la Universidad Torcuato Di Tella.
 
-Me interesan las formas de observar nuestro planeta: desde miles de kilómetros de altura con sensores a bordo de satélites, con mediciones in situ desde el terreno o con herramientas de modelado climático. El riesgo climático es donde esas herramientas cobran más sentido para mí. Hoy trabajo en productos de seguros paramétricos, diseñando soluciones para monitorear riesgo y medir pérdidas por catástrofes naturales usando satélites, machine learning y ciencia de datos. Lidero la agenda científica y coordino el equipo detrás de esos productos.
+Me desenvuelvo como científica del clima y trabajo en la intersección de la observación de la Tierra, análisis geoespacial y riesgo climático. Mi trabajo central es garantizar la solidez científica de los productos de riesgo climático: seleccionar las fuentes de datos correctas, validar metodologías y traducir la observación de la Tierra en modelos robustos. Trabajo en todo el ciclo del producto, desde la definición del problema, el diseño de pipelines de datos satelitales hasta el pricing final. Lidero un equipo técnico que desarrolla productos paramétricos para heladas, sequías, olas de calor, marejadas y olas extremas en América Latina, usando imágenes MODIS, VIIRS, AVHRR y Sentinel, machine learning y productos de reanálisis como ERA5 y CMIP6.
 
-Soy tenaz en mi forma de aprender. Me apasionan los sistemas naturales y genuinamente me interesa cómo funciona el mundo en el que vivimos y cómo el clima lo moldea.
+Soy tenaz en mi forma de aprender. Me apasionan los sistemas naturales y me interesa cómo funciona el mundo en el que vivimos y cómo el clima lo moldea.
 
 Cuando no estoy haciendo nada de eso, probablemente estoy aprendiendo algo nuevo. Toco el piano desde los nueve años y nado cada vez que puedo.
 
