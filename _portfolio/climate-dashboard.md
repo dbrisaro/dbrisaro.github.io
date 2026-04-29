@@ -4,6 +4,7 @@ title: "Climate Variability Dashboard"
 excerpt: "An interactive dashboard tracking key climate and oceanic oscillations, with forecasts and SST anomaly maps focused on Latin America."
 date: 2024-02-01
 permalink: /portfolio/climate-dashboard/
+external_url: "https://climate-variability-dashboard.streamlit.app/"
 category: "Data Science"
 tags:
   - Climate
@@ -21,6 +22,7 @@ tags:
     <span class="project-tag">{{ tag }}</span>
     {% endfor %}
   </div>
+  <p style="margin-top: 1rem;"><a href="https://climate-variability-dashboard.streamlit.app/" target="_blank" class="btn">Open Dashboard</a></p>
 </div>
 
 ## Overview
@@ -40,6 +42,4 @@ This dashboard brings together the most relevant climate and oceanic indices in 
 
 ## Dashboard
 
-The dashboard is live. You can explore it here:
-
-<a href="https://climate-variability-dashboard.streamlit.app/" target="_blank" class="btn">Open Dashboard</a>
+The dashboard is live. Use the button at the top of the page to open it.

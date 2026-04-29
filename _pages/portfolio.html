@@ -17,7 +17,7 @@ permalink: /portfolio/
     <div class="portfolio-card__image--placeholder">{{ project.category | default: "Project" }}</div>
     {% endif %}
     <div class="portfolio-card__body">
-      <h3 class="portfolio-card__title"><a href="{{ project.url }}">{{ project.title }}</a></h3>
+      <h3 class="portfolio-card__title"><a href="{{ project.external_url | default: project.url }}" {% if project.external_url %}target="_blank"{% endif %}>{{ project.title }}</a></h3>
       {% if project.excerpt %}
       <p class="portfolio-card__excerpt">{{ project.excerpt }}</p>
       {% endif %}
