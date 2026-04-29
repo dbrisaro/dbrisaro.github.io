@@ -376,10 +376,15 @@ a.button:hover {
   border-radius: 3px;
   overflow: hidden;
   transition: box-shadow 0.15s;
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
 .portfolio-card:hover {
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  text-decoration: none;
+  color: inherit;
 }
 
 .portfolio-card__image {

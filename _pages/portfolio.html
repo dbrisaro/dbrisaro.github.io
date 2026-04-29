@@ -10,14 +10,14 @@ permalink: /portfolio/
   {% assign projects = site.portfolio | sort: "date" | reverse %}
   {% for project in projects %}
   {% unless project.title == "" %}
-  <div class="portfolio-card">
+  <a class="portfolio-card" href="{{ project.external_url | default: project.url }}" {% if project.external_url %}target="_blank"{% endif %}>
     {% if project.image %}
     <img class="portfolio-card__image" src="{{ project.image }}" alt="{{ project.title }}">
     {% else %}
     <div class="portfolio-card__image--placeholder">{{ project.category | default: "Project" }}</div>
     {% endif %}
     <div class="portfolio-card__body">
-      <h3 class="portfolio-card__title"><a href="{{ project.external_url | default: project.url }}" {% if project.external_url %}target="_blank"{% endif %}>{{ project.title }}</a></h3>
+      <h3 class="portfolio-card__title">{{ project.title }}</h3>
       {% if project.excerpt %}
       <p class="portfolio-card__excerpt">{{ project.excerpt }}</p>
       {% endif %}
@@ -29,7 +29,7 @@ permalink: /portfolio/
       </div>
       {% endif %}
     </div>
-  </div>
+  </a>
   {% endunless %}
   {% endfor %}
 </div>
