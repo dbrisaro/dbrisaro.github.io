@@ -42,7 +42,7 @@ redirect_from:
 <div class="cv-entry">
   <div class="cv-entry__date">Jan 2024 – Present</div>
   <div class="cv-entry__body">
-    <p class="cv-entry__title">Lead Climate Scientist (part-time)</p>
+    <p class="cv-entry__title">Principal Climate Scientist</p>
     <p class="cv-entry__sub">Suyana – Climate Insurance</p>
     <p class="cv-entry__detail">Developed parametric models for climate risk insurance. Integrated field and satellite data for high-accuracy climate risk assessments. Conducted detection and analysis of extreme weather events.</p>
   </div>
