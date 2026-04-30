@@ -206,6 +206,34 @@ li { margin-bottom: 0.3rem; }
   padding: 2.5rem 3.5rem;
 }
 
+/* ── Blog post content ── */
+
+.page__content img {
+  max-width: 85%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+}
+
+.page__content em {
+  display: block;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.page__content h1,
+.page__content h2 {
+  margin-top: 2rem;
+}
+
+.page__title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
 /* ── News table ── */
 
 .news-table {
