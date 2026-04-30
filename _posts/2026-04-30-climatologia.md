@@ -196,6 +196,6 @@ Narapusetty et al. (2009) muestran con experimentos de validación cruzada sobre
 
 DelSole, T., & Tippett, M. K. (2022). <em>Statistical Methods for Climate Scientists</em>. Cambridge University Press.
 
-Narapusetty, B., DelSole, T., & Tippett, M. K. (2009). Optimal Estimation of the Climatological Mean. <em>Journal of Climate</em>, 22(18), 4845–4859. https://doi.org/10.1175/2009JCLI2944.1
+Narapusetty, B., DelSole, T., & Tippett, M. K. (2009). Optimal Estimation of the Climatological Mean. <em>Journal of Climate</em>, 22(18), 4845–4859. <a href="https://doi.org/10.1175/2009JCLI2944.1" target="_blank">https://doi.org/10.1175/2009JCLI2944.1</a>
 
-Reynolds, R. W., Smith, T. M., Liu, C., Chelton, D. B., Casey, K. S., & Schlax, M. G. (2007). Daily High-Resolution-Blended Analyses for Sea Surface Temperature. <em>Journal of Climate</em>, 20(22), 5473–5496. https://doi.org/10.1175/2007JCLI1824.1
+Reynolds, R. W., Smith, T. M., Liu, C., Chelton, D. B., Casey, K. S., & Schlax, M. G. (2007). Daily High-Resolution-Blended Analyses for Sea Surface Temperature. <em>Journal of Climate</em>, 20(22), 5473–5496. <a href="https://doi.org/10.1175/2007JCLI1824.1" target="_blank">https://doi.org/10.1175/2007JCLI1824.1</a>
