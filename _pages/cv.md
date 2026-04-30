@@ -8,10 +8,6 @@ redirect_from:
 
 ## CV
 
-<div class="cv-downloads">
-  <a href="/files/cv.pdf" class="button" target="_blank">Download CV</a>
-</div>
-
 ## Education
 
 <div class="cv-entry">
