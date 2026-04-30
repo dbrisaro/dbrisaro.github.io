@@ -1,7 +1,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Daniuverse"
+title                    : "Daniela Risaro"
 title_separator          : "\n"
 name                     : &name "Daniela Belén Risaro"
 description              : &description "Climate Data Scientist | PhD in Atmospheric and Oceanic Sciences, specializing in data science and remote sensing for climate risk assessment."
