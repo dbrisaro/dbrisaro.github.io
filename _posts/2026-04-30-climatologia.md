@@ -17,7 +17,7 @@ La idea central de una climatología es capturar la estacionalidad. Si pensamos 
 Veámoslo gráficamente. Si tomamos una región del mar y seguimos su temperatura superficial durante los últimos 10 años, vemos una estacionalidad marcada (Figura 1). En el Atlántico Sudoccidental, los veranos son en promedio unos 7°C más cálidos que los inviernos, con otoño y primavera como estaciones de transición.
 
 ![Evolución de la SST en el Atlántico Sudoccidental (2015-2025)](/images/climatologia/evolucion_sst.png)
-*Figura 1. Temperatura superficial del mar diaria en el Atlántico Sudoccidental (310-320°E, 40-35°S) entre 2015 y 2025.*
+<p class="caption">Figura 1. Temperatura superficial del mar diaria en el Atlántico Sudoccidental (310-320°E, 40-35°S) entre 2015 y 2025.</p>
 
 Es extremadamente útil conocer la climatología de un lugar, porque eso
 nos permite tener algo contra qué comparar. Cuando queramos entender si
@@ -54,7 +54,7 @@ subrepresentados.
 Tomemos nuestro punto en el océano y veamos cómo luce esa climatología:
 
 ![Climatologías de SST para distintos períodos base](/images/climatologia/climatologias.png)
-*Figura 2. Climatología de promedio simple calculada con períodos base de 10, 15 y 30 años.*
+<p class="caption">Figura 2. Climatología de promedio simple calculada con períodos base de 10, 15 y 30 años.</p>
 
 Y comparemos también cómo luce esa climatología cuando achicamos nuestro
 "periodo base". Si en lugar de usar 30 años para construir nuestro año
@@ -93,7 +93,7 @@ climatológico y ver cómo luce (Figura 3). Además podemos compararlo con la
 metodología que se basa en promedios simples:
 
 ![Comparación entre el promedio simple y el método espectral con H=4](/images/climatologia/comparacion_fourier_vs_simple.png)
-*Figura 3. Climatologías calculadas con 30 años de datos usando promedio simple y método espectral (H=4).*
+<p class="caption">Figura 3. Climatologías calculadas con 30 años de datos usando promedio simple y método espectral (H=4).</p>
 
 A grandes rasgos se observa que ambas metodologías capturan muy bien el
 ciclo estacional: el máximo de temperatura ocurre alrededor del día 50
@@ -142,7 +142,7 @@ vio durante su construcción.
 En la Figura 4 aplicamos ese criterio con el cálculo de ambas climatologías para distintas cantidades de años, y evaluamos el error sobre un período de test fijo (2015-2024).
 
 ![RMSE en datos independientes en función de los años de cómputo](/images/climatologia/residuos.png)
-*Figura 4. RMSE sobre datos independientes (2015-2024) en función de los años de cómputo para promedio simple y método espectral (panel superior). Diferencia de RMSE entre ambos métodos (panel inferior).*
+<p class="caption">Figura 4. RMSE sobre datos independientes (2015-2024) en función de los años de cómputo para promedio simple y método espectral (panel superior). Diferencia de RMSE entre ambos métodos (panel inferior).</p>
 
 Con apenas 2 años de cómputo, el promedio simple comete un error casi 0.07 °C mayor que el espectral. A medida que crece el registro la diferencia se achica, pero el método espectral nunca pierde.
 
@@ -172,7 +172,7 @@ coeficientes independientemente de cuántos años tengamos, y produce una
 curva suave incluso con registros cortos.
 
 ![Climatologías construidas con 2 vs 20 años de cómputo](/images/climatologia/fig_pocos_anios.png)
-*Figura 5. Climatologías calculadas con 2 años de cómputo (izquierda) y 20 años (derecha), comparando promedio simple y método espectral (H=4).*
+<p class="caption">Figura 5. Climatologías calculadas con 2 años de cómputo (izquierda) y 20 años (derecha), comparando promedio simple y método espectral (H=4).</p>
 
 Esto no es un accidente de un año particular: es sistemático (Figura 6). Si
 repetimos el ejercicio agregando años de a uno y vemos cómo cambia cada
@@ -180,7 +180,7 @@ climatología, el promedio simple salta notoriamente con cada nuevo año
 mientras que el espectral casi no se mueve.
 
 ![Estabilidad de la climatología al agregar años de datos](/images/climatologia/fig_estabilidad.png)
-*Figura 6. Climatologías calculadas con 2, 4, 6, 10 y 20 años de cómputo para promedio simple (izquierda) y método espectral con H=4 (derecha).*
+<p class="caption">Figura 6. Climatologías calculadas con 2, 4, 6, 10 y 20 años de cómputo para promedio simple (izquierda) y método espectral con H=4 (derecha).</p>
 
 Con 2 años de cómputo la diferencia es llamativa. A medida que
 crece el registro, la brecha se achica rápidamente y se vuelve
