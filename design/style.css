@@ -209,7 +209,8 @@ li { margin-bottom: 0.3rem; }
 /* ── Blog post content ── */
 
 .page__content img {
-  max-width: 85%;
+  max-width: 680px;
+  width: 100%;
   height: auto;
   display: block;
   margin: 1.5rem auto;
