@@ -1,7 +1,9 @@
 ---
-title: '¿Cómo se calcula una climatología?'
+title: "¿Cómo se calcula una climatología?"
 date: 2026-04-30
 permalink: /posts/2026/04/climatologia/
+layout: single
+author_profile: true
 tags:
   - climate
   - statistics
