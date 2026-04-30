@@ -209,14 +209,14 @@ li { margin-bottom: 0.3rem; }
 /* ── Blog post content ── */
 
 .page__content img {
-  max-width: 680px;
+  max-width: 760px;
   width: 100%;
   height: auto;
   display: block;
   margin: 1.5rem auto;
 }
 
-.page__content em {
+.page__content p > em:only-child {
   display: block;
   text-align: center;
   font-size: 0.85rem;
