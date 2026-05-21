@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Océano en Capas — Daniela Risaro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:     #1a2332;
+      --muted:   #64748b;
+      --light:   #f1f5f9;
+      --border:  #e2e8f0;
+      --accent:  #0369a1;
+      --samw:    #0891b2;
+      --aaiw:    #0284c7;
+      --nadw:    #1d4ed8;
+      --aabw:    #7c3aed;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Lora', Georgia, serif; background: #fff; color: var(--ink); }
+
+    /* ── Sticky nav ─────────────────────────────── */
+    #top-nav {
+      position: sticky; top: 0; z-index: 1000;
+      background: #fff; border-bottom: 1px solid var(--border);
+      display: flex; align-items: center;
+      height: 50px; padding: 0 28px; gap: 0;
+    }
+
+    .nav-brand {
+      font-family: 'Barlow', sans-serif; font-size: 13px;
+      font-weight: 600; color: var(--ink); white-space: nowrap;
+      margin-right: 28px; text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .nav-chapters { display: flex; overflow-x: auto; gap: 0; }
+
+    .nav-chapters a {
+      font-family: 'Barlow', sans-serif; font-size: 13px;
+      color: var(--muted); text-decoration: none;
+      padding: 0 16px; height: 50px; display: flex;
+      align-items: center; white-space: nowrap;
+      border-bottom: 3px solid transparent;
+      transition: color .2s, border-color .2s;
+    }
+
+    .nav-chapters a:hover  { color: var(--ink); }
+    .nav-chapters a.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+    /* ── Hero ───────────────────────────────────── */
+    #hero {
+      height: 100vh; position: relative; overflow: hidden;
+    }
+
+    #hero-map { position: absolute; inset: 0; }
+
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,.25) 0%, rgba(0,0,0,.55) 100%);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 32px;
+      pointer-events: none;
+    }
+
+    .hero-overlay h1 {
+      font-family: 'Barlow', sans-serif; font-size: clamp(40px, 6vw, 72px);
+      font-weight: 700; color: #fff; line-height: 1.0;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 24px rgba(0,0,0,.4);
+    }
+
+    .hero-overlay p {
+      font-family: 'Lora', serif; font-size: clamp(16px, 2vw, 20px);
+      color: rgba(255,255,255,.88); max-width: 560px; line-height: 1.6;
+    }
+
+    .scroll-cue {
+      position: absolute; bottom: 28px; left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,.65); font-family: 'Barlow', sans-serif;
+      font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      animation: nudge 2s ease-in-out infinite;
+    }
+
+    @keyframes nudge {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50%      { transform: translateX(-50%) translateY(7px); }
+    }
+
+    .scroll-cue svg { opacity: .7; }
+
+    /* ── Section content ────────────────────────── */
+    .story-body {
+      max-width: 740px; margin: 0 auto;
+      padding: 64px 28px;
+    }
+
+    .section-kicker {
+      font-family: 'Barlow', sans-serif; font-size: 12px;
+      font-weight: 600; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .story-body h2 {
+      font-family: 'Barlow', sans-serif; font-size: clamp(26px, 4vw, 38px);
+      font-weight: 700; line-height: 1.1; color: var(--ink);
+      margin-bottom: 28px;
+    }
+
+    .story-body p {
+      font-size: 18px; line-height: 1.85;
+      color: #334155; margin-bottom: 20px;
+    }
+
+    .story-body p strong { color: var(--ink); }
+
+    /* ── Chapter banner ─────────────────────────── */
+    .ch-banner {
+      height: 260px; width: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 40px;
+      position: relative;
+    }
+
+    .ch-banner h2 {
+      font-family: 'Barlow', sans-serif; font-size: clamp(32px, 5vw, 52px);
+      font-weight: 700; color: #fff; line-height: 1.05;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 16px rgba(0,0,0,.35);
+    }
+
+    .ch-banner .ch-sub {
+      font-family: 'Barlow', sans-serif; font-size: 14px;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: rgba(255,255,255,.8);
+    }
+
+    /* ── Inline map ─────────────────────────────── */
+    .map-block {
+      width: 100%; height: 480px;
+      position: relative; overflow: hidden;
+    }
+
+    .map-block .leaflet-map { width: 100%; height: 100%; }
+
+    .map-caption {
+      background: var(--light); padding: 10px 20px;
+      font-family: 'Barlow', sans-serif; font-size: 12px;
+      color: var(--muted); letter-spacing: .3px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── Stat box ───────────────────────────────── */
+    .stat-box {
+      display: flex; gap: 0;
+      border: 1px solid var(--border); border-left: 4px solid;
+      border-radius: 4px; margin: 36px 0;
+      overflow: hidden;
+    }
+
+    .stat-item {
+      flex: 1; padding: 20px 24px;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat-item:last-child { border-right: none; }
+
+    .stat-value {
+      font-family: 'Barlow', sans-serif; font-size: 28px;
+      font-weight: 700; line-height: 1.1;
+    }
+
+    .stat-label {
+      font-family: 'Barlow', sans-serif; font-size: 11px;
+      text-transform: uppercase; letter-spacing: 1px;
+      color: var(--muted); margin-top: 4px;
+    }
+
+    /* ── Diagram row ────────────────────────────── */
+    .diag-row {
+      display: flex; gap: 24px; margin: 40px 0;
+      align-items: flex-start;
+    }
+
+    .diag-block { flex: 1; min-width: 0; }
+
+    .diag-label {
+      font-family: 'Barlow', sans-serif; font-size: 11px;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 8px;
+    }
+
+    .diag-block svg { width: 100%; display: block; }
+
+    /* ── Image compare slider ───────────────────── */
+    .img-compare {
+      position: relative; overflow: hidden;
+      cursor: ew-resize; user-select: none;
+      border-radius: 6px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.18);
+    }
+    .img-compare img { display: block; width: 100%; height: auto; }
+    .img-compare .img-after {
+      position: absolute; inset: 0;
+      clip-path: inset(0 50% 0 0);
+      overflow: hidden;
+    }
+    .img-compare .img-after img {
+      position: absolute; top: 0; left: 0; width: 100%;
+    }
+    .compare-handle {
+      position: absolute; top: 0; bottom: 0; left: 50%;
+      width: 2px; background: #fff;
+      transform: translateX(-50%); pointer-events: none;
+    }
+    .compare-handle-btn {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 36px; height: 36px;
+      background: #fff; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,.4);
+    }
+    .compare-handle-btn svg { width: 18px; height: 18px; }
+    .compare-label {
+      position: absolute; bottom: 12px;
+      background: rgba(0,0,0,.55); color: #fff;
+      font-family: 'Barlow', sans-serif;
+      font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 4px;
+    }
+    .compare-label.left  { left: 14px; }
+    .compare-label.right { right: 14px; }
+    .compare-caption {
+      text-align: center; font-size: 13px; color: var(--muted);
+      font-family: 'Barlow', sans-serif; margin-top: 10px;
+      font-style: italic;
+    }
+
+    /* ── Divider ────────────────────────────────── */
+    .divider { height: 1px; background: var(--border); margin: 0; }
+
+    /* ── Footer ─────────────────────────────────── */
+    footer {
+      background: var(--light); border-top: 1px solid var(--border);
+      padding: 40px 28px; text-align: center;
+    }
+
+    footer p {
+      font-family: 'Barlow', sans-serif; font-size: 14px;
+      color: var(--muted); margin-bottom: 8px;
+    }
+
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ── Leaflet overrides ──────────────────────── */
+    .leaflet-control-attribution { font-size: 9px !important; }
+    .leaflet-control-zoom a { font-size: 14px !important; }
+
+    /* ── Mobile ─────────────────────────────────── */
+    @media (max-width: 600px) {
+      .diag-row { flex-direction: column; }
+      .stat-box { flex-direction: column; }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .stat-item:last-child { border-bottom: none; }
+      .map-block { height: 300px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────── -->
+<nav id="top-nav">
+  <a href="/portfolio/" class="nav-brand">← danielarisaro.ar</a>
+  <div class="nav-chapters">
+    <a href="#intro"   data-sec="intro">El océano en capas</a>
+    <a href="#temp"    data-sec="temp">Temperatura</a>
+    <a href="#samw"    data-sec="samw">SAMW</a>
+    <a href="#aaiw"    data-sec="aaiw">AAIW</a>
+    <a href="#nadw"    data-sec="nadw">NADW</a>
+    <a href="#aabw"    data-sec="aabw">AABW</a>
+    <a href="#circ"    data-sec="circ">Circulación</a>
+  </div>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────── -->
+<section id="hero">
+  <div id="hero-map"></div>
+  <div class="hero-overlay">
+    <h1>El Océano<br>en Capas</h1>
+    <p>Un viaje a través de las masas de agua que organizan el océano profundo y regulan el clima del planeta.</p>
+  </div>
+  <div class="scroll-cue">
+    Desplazarse
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="white"><path d="M8 3v10M3 8l5 5 5-5" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+  </div>
+</section>
+
+<!-- ── INTRO ─────────────────────────────────────── -->
+<article id="intro">
+  <div class="story-body">
+    <p class="section-kicker">Fundamentos</p>
+    <h2>¿Qué es una masa de agua?</h2>
+    <p>El océano no es un líquido homogéneo. Sus aguas se organizan en <strong>masas bien definidas</strong>, cada una con una combinación única de temperatura y salinidad — su "huella digital" termodinámica.</p>
+    <p>Estas propiedades se adquieren en la superficie oceánica, donde el agua interactúa con la atmósfera. Una vez formadas, las masas de agua se hunden y circulan conservando sus características durante décadas o incluso siglos.</p>
+    <p>Identificarlas nos permite reconstruir rutas de circulación, estimar tiempos de residencia bajo la superficie, y entender cómo el océano transporta calor, sal y carbono alrededor del globo.</p>
+
+    <div class="diag-row">
+      <div class="diag-block">
+        <div class="diag-label">Diagrama T-S — identificación de masas de agua</div>
+        <!-- T-S hardcoded SVG -->
+        <svg viewBox="0 0 260 200" xmlns="http://www.w3.org/2000/svg">
+          <rect x="30" y="10" width="210" height="155" fill="#f8fafc" rx="2"/>
+          <!-- grid -->
+          <line x1="30" y1="10" x2="30" y2="165" stroke="#cbd5e1" stroke-width="1"/>
+          <line x1="30" y1="165" x2="240" y2="165" stroke="#cbd5e1" stroke-width="1"/>
+          <line x1="30" y1="87" x2="240" y2="87" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="3 3"/>
+          <line x1="135" y1="10" x2="135" y2="165" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="3 3"/>
+          <!-- y ticks (T: -1.5→14°C, y: 165→10) -->
+          <text x="27" y="168" fill="#94a3b8" font-size="9" text-anchor="end" font-family="Barlow,sans-serif">-1</text>
+          <text x="27" y="90"  fill="#94a3b8" font-size="9" text-anchor="end" font-family="Barlow,sans-serif">6</text>
+          <text x="27" y="13"  fill="#94a3b8" font-size="9" text-anchor="end" font-family="Barlow,sans-serif">14°C</text>
+          <!-- x ticks (S: 33.6→35.8, x: 30→240) -->
+          <text x="30"  y="178" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="Barlow,sans-serif">33.6</text>
+          <text x="135" y="178" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="Barlow,sans-serif">34.7</text>
+          <text x="240" y="178" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="Barlow,sans-serif">35.8</text>
+          <!-- axis labels -->
+          <text x="135" y="193" fill="#64748b" font-size="10" text-anchor="middle" font-family="Barlow,sans-serif">Salinidad (psu)</text>
+          <text x="10"  y="88" fill="#64748b" font-size="10" text-anchor="middle" font-family="Barlow,sans-serif" transform="rotate(-90,10,88)">Temperatura (°C)</text>
+          <!-- SAMW ellipse: T≈8, S≈34.9 → x=30+(34.9-33.6)/2.2*210=124, y=165-(8+1.5)/15.5*155=75 -->
+          <ellipse cx="124" cy="75" rx="22" ry="12" fill="#0891b2" fill-opacity=".22" stroke="#0891b2" stroke-width="1.5"/>
+          <text x="149" y="72" fill="#0891b2" font-size="10" font-family="Barlow,sans-serif" font-weight="600">SAMW</text>
+          <!-- AAIW dot: T≈3.5, S≈34.2 → x=30+(34.2-33.6)/2.2*210=87, y=165-(3.5+1.5)/15.5*155=115 -->
+          <circle cx="87" cy="115" r="8" fill="#0284c7" fill-opacity=".28" stroke="#0284c7" stroke-width="1.5"/>
+          <text x="98" y="112" fill="#0284c7" font-size="10" font-family="Barlow,sans-serif" font-weight="600">AAIW</text>
+          <!-- NADW dot: T≈3, S≈34.95 → x=30+(34.95-33.6)/2.2*210=129, y=165-(3+1.5)/15.5*155=120 -->
+          <circle cx="129" cy="120" r="8" fill="#1d4ed8" fill-opacity=".28" stroke="#1d4ed8" stroke-width="1.5"/>
+          <text x="140" y="117" fill="#1d4ed8" font-size="10" font-family="Barlow,sans-serif" font-weight="600">NADW</text>
+          <!-- AABW dot: T≈-0.5, S≈34.65 → x=30+(34.65-33.6)/2.2*210=130, y=165-(-0.5+1.5)/15.5*155=155 -->
+          <circle cx="110" cy="155" r="8" fill="#7c3aed" fill-opacity=".28" stroke="#7c3aed" stroke-width="1.5"/>
+          <text x="121" y="152" fill="#7c3aed" font-size="10" font-family="Barlow,sans-serif" font-weight="600">AABW</text>
+        </svg>
+      </div>
+      <div class="diag-block">
+        <div class="diag-label">Sección meridional — Atlántico (esquemático)</div>
+        <!-- Cross-section hardcoded SVG -->
+        <svg viewBox="0 0 260 200" xmlns="http://www.w3.org/2000/svg">
+          <!-- ocean bg -->
+          <rect x="30" y="10" width="215" height="155" fill="#0f172a" rx="2"/>
+          <!-- AABW: 4000-5500m, 70S-20N (x30-182, y126-165) -->
+          <polygon points="30,126 182,126 182,165 30,165" fill="#7c3aed" fill-opacity=".35" stroke="#7c3aed" stroke-width="1"/>
+          <!-- NADW: 1500-4000m, 40S-65N (x72-245, y57-126) -->
+          <polygon points="72,57 245,57 245,126 72,126" fill="#1d4ed8" fill-opacity=".35" stroke="#1d4ed8" stroke-width="1"/>
+          <!-- AAIW: 500-1000m, 50S-20N (x57-182, y24-40) -->
+          <polygon points="57,24 182,24 182,40 57,40" fill="#0284c7" fill-opacity=".4" stroke="#0284c7" stroke-width="1"/>
+          <!-- SAMW: 0-500m, 50S-35S (x57-86, y10-24) -->
+          <polygon points="57,10 86,10 86,24 57,24" fill="#0891b2" fill-opacity=".45" stroke="#0891b2" stroke-width="1"/>
+          <!-- Antarctic shelf -->
+          <polygon points="30,10 48,10 48,70 30,70" fill="#1e293b"/>
+          <!-- seafloor -->
+          <polygon points="30,155 72,152 115,148 155,145 182,147 215,150 245,149 245,165 30,165" fill="#1e293b"/>
+          <!-- border -->
+          <rect x="30" y="10" width="215" height="155" fill="none" stroke="#334155" stroke-width="0.8"/>
+          <!-- labels -->
+          <text x="106" y="138" fill="#a78bfa" font-size="9" text-anchor="middle" font-family="Barlow,sans-serif">AABW</text>
+          <text x="158" y="95" fill="#93c5fd" font-size="9" text-anchor="middle" font-family="Barlow,sans-serif">NADW</text>
+          <text x="120" y="34" fill="#7dd3fc" font-size="9" text-anchor="middle" font-family="Barlow,sans-serif">AAIW</text>
+          <text x="72"  y="19" fill="#a5f3fc" font-size="8" text-anchor="middle" font-family="Barlow,sans-serif">SAMW</text>
+          <!-- depth axis -->
+          <text x="28" y="13"  fill="#475569" font-size="8" text-anchor="end" font-family="Barlow,sans-serif">0</text>
+          <text x="28" y="57"  fill="#475569" font-size="8" text-anchor="end" font-family="Barlow,sans-serif">1.5</text>
+          <text x="28" y="126" fill="#475569" font-size="8" text-anchor="end" font-family="Barlow,sans-serif">4</text>
+          <text x="28" y="165" fill="#475569" font-size="8" text-anchor="end" font-family="Barlow,sans-serif">5.5km</text>
+          <!-- lat axis -->
+          <text x="30"  y="178" fill="#475569" font-size="8" text-anchor="middle" font-family="Barlow,sans-serif">70S</text>
+          <text x="57"  y="178" fill="#475569" font-size="8" text-anchor="middle" font-family="Barlow,sans-serif">50S</text>
+          <text x="137" y="178" fill="#475569" font-size="8" text-anchor="middle" font-family="Barlow,sans-serif">EQ</text>
+          <text x="200" y="178" fill="#475569" font-size="8" text-anchor="middle" font-family="Barlow,sans-serif">40N</text>
+          <text x="245" y="178" fill="#475569" font-size="8" text-anchor="middle" font-family="Barlow,sans-serif">65N</text>
+          <text x="128" y="192" fill="#64748b" font-size="9" text-anchor="middle" font-family="Barlow,sans-serif">Latitud</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ── TEMPERATURA BANNER ───────────────────────── -->
+<div id="temp" class="ch-banner" style="background: linear-gradient(135deg,#0c2340 0%,#1e3a5f 50%,#0e4d6b 100%)">
+  <div class="ch-sub">WOA18 · Media anual</div>
+  <h2>El campo de temperatura</h2>
+</div>
+
+<article>
+  <div class="story-body">
+    <p class="section-kicker">Temperatura</p>
+    <h2>De la superficie al océano profundo</h2>
+    <p>La temperatura del océano varía drásticamente con la profundidad. En superficie, el calentamiento solar genera un gradiente claro entre los trópicos cálidos (~28 °C) y los polos fríos (–2 °C). A 1000 m de profundidad, el panorama cambia por completo: el océano es uniformemente frío, con excepción de algunos focos de aguas intermedias más cálidas.</p>
+    <p>Este contraste es el motor de la estratificación oceánica que permite la existencia de masas de agua bien definidas. Arrastrá el control para comparar ambos niveles.</p>
+  </div>
+
+  <div class="story-body" style="max-width:900px">
+    <div class="img-compare" id="temp-compare">
+      <img src="img/temp_surface.png" alt="Temperatura superficial">
+      <div class="img-after">
+        <img src="img/temp_1000m.png" alt="Temperatura a 1000 m">
+      </div>
+      <div class="compare-handle">
+        <div class="compare-handle-btn">
+          <svg viewBox="0 0 20 20" fill="none" stroke="#1a2332" stroke-width="2" stroke-linecap="round">
+            <path d="M6 4l-4 6 4 6M14 4l4 6-4 6"/>
+          </svg>
+        </div>
+      </div>
+      <span class="compare-label left">0 m</span>
+      <span class="compare-label right">1 000 m</span>
+    </div>
+    <p class="compare-caption">Temperatura anual media (WOA18). Arrastrá para comparar superficie (0 m) con el océano profundo (1 000 m).</p>
+  </div>
+</article>
+
+<div class="divider"></div>
+
+<!-- ── SAMW BANNER ───────────────────────────────── -->
+<div id="samw" class="ch-banner" style="background: linear-gradient(135deg,#164e63 0%,#0891b2 50%,#06b6d4 100%)">
+  <div class="ch-sub">35°S – 50°S · Superficie – 500 m</div>
+  <h2>Agua Modal Subantártica</h2>
+</div>
+
+<article>
+  <div class="story-body">
+    <p class="section-kicker">SAMW</p>
+    <h2>Los vientos del oeste mezclan el océano hasta sus raíces</h2>
+    <p>Entre los 35° y 50° de latitud sur, los vientos del oeste soplan sin obstáculos sobre el océano abierto. En invierno, mezclan la columna de agua hasta profundidades de 400–600 m, generando una capa homogénea bien ventilada: el <strong>Agua Modal Subantártica (SAMW)</strong>.</p>
+    <p>Al hundirse, transporta calor, oxígeno y CO₂ absorbido de la atmósfera hacia el interior del océano. Este proceso es uno de los mecanismos clave por los que el océano modera el calentamiento global.</p>
+
+    <div class="stat-box" style="border-left-color: var(--samw);">
+      <div class="stat-item">
+        <div class="stat-value" style="color:var(--samw)">4 – 12 °C</div>
+        <div class="stat-label">Temperatura</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" style="color:var(--samw)">34.0 – 35.8</div>
+        <div class="stat-label">Salinidad (psu)</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" style="color:var(--samw)">Sup. – 500 m</div>
+        <div class="stat-label">Profundidad</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-block">
+    <div id="map-samw" class="leaflet-map"></div>
+  </div>
+  <div class="map-caption">Zona de formación del SAMW en el Océano Austral (35°S–50°S). Los colores indican la extensión aproximada en los sectores Atlántico, Índico y Pacífico.</div>
+</article>
+
+<div class="divider"></div>
+
+<!-- ── AAIW BANNER ───────────────────────────────── -->
+<div id="aaiw" class="ch-banner" style="background: linear-gradient(135deg,#0c4a6e 0%,#0284c7 50%,#38bdf8 100%)">
+  <div class="ch-sub">Frente Subantártico · 700 – 1,000 m</div>
+  <h2>Agua Intermedia Antártica</h2>
+</div>
+
+<article>
+  <div class="story-body">
+    <p class="section-kicker">AAIW</p>
+    <h2>Una lengua fría que penetra hasta el trópico</h2>
+    <p>En el <strong>Frente Subantártico</strong>, alrededor de los 50°S, el agua subantártica más fría y poco salada se hunde bajo las masas subtropicales y comienza un largo viaje hacia el norte. Es el <strong>Agua Intermedia Antártica (AAIW)</strong>.</p>
+    <p>Su firma es inconfundible: baja salinidad (~34.2 psu) y temperatura de 2–6 °C. En el Atlántico puede rastrearse hasta los 20°N, a 700–1000 m de profundidad, como una lengua de agua fresca que recorre miles de kilómetros desde su origen austral.</p>
+
+    <div class="stat-box" style="border-left-color: var(--aaiw);">
+      <div class="stat-item">
+        <div class="stat-value" style="color:var(--aaiw)">2 – 6 °C</div>
+        <div class="stat-label">Temperatura</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" style="color:var(--aaiw)">~34.2</div>
+        <div class="stat-label">Salinidad (psu)</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" style="color:var(--aaiw)">700 – 1,000 m</div>
+        <div class="stat-label">Profundidad</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-block">
+    <div id="map-aaiw" class="leaflet-map"></div>
+  </div>
+  <div class="map-caption">Zona de formación del AAIW en el Frente Subantártico (~50°S) y extensión de la lengua hacia el norte en el Atlántico Sur.</div>
+</article>
+
+<div class="divider"></div>
+
+<!-- ── NADW BANNER ───────────────────────────────── -->
+<div id="nadw" class="ch-banner" style="background: linear-gradient(135deg,#1e1b4b 0%,#1d4ed8 50%,#3b82f6 100%)">
+  <div class="ch-sub">Atlántico Norte · 1,500 – 4,000 m</div>
+  <h2>Agua Profunda del Atlántico Norte</h2>
+</div>
+
+<article>
+  <div class="story-body">
+    <p class="section-kicker">NADW</p>
+    <h2>La Corriente del Golfo llega al norte… y se hunde</h2>
+    <p>La Corriente del Golfo transporta agua cálida y salada desde el Caribe hacia el norte. A medida que avanza, cede su calor a la atmósfera de Europa occidental. Al enfriarse, el agua se vuelve densa y <strong>se hunde hasta el fondo del océano</strong>.</p>
+    <p>Este proceso ocurre principalmente en el <strong>Mar de Labrador</strong> y en los <strong>Mares Nórdicos</strong>, a través de los desbordamientos del Estrecho de Dinamarca y el Paso Faroe-Escocia. El resultado es el <strong>NADW</strong>, una masa de agua que recorre el Atlántico profundo de norte a sur.</p>
+
+    <div class="stat-box" style="border-left-color: var(--nadw);">
+      <div class="stat-item">
+        <div class="stat-value" style="color:var(--nadw)">2 – 4 °C</div>
+        <div class="stat-label">Temperatura</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" style="color:var(--nadw)">34.9 – 35.0</div>
+        <div class="stat-label">Salinidad (psu)</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" style="color:var(--nadw)">1,500 – 4,000 m</div>
+        <div class="stat-label">Profundidad</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-block">
+    <div id="map-nadw" class="leaflet-map"></div>
+  </div>
+  <div class="map-caption">Zonas de formación del NADW: Mar de Labrador (izquierda) y Mares Nórdicos con sus desbordamientos hacia el Atlántico.</div>
+</article>
+
+<div class="divider"></div>
+
+<!-- ── AABW BANNER ───────────────────────────────── -->
+<div id="aabw" class="ch-banner" style="background: linear-gradient(135deg,#2e1065 0%,#7c3aed 50%,#a78bfa 100%)">
+  <div class="ch-sub">Mar de Weddell · &gt; 4,000 m</div>
+  <h2>Agua de Fondo Antártica</h2>
+</div>
+
+<article>
+  <div class="story-body">
+    <p class="section-kicker">AABW</p>
+    <h2>La masa de agua más densa del planeta nace en el hielo</h2>
+    <p>Cuando el <strong>Mar de Weddell</strong> se congela en invierno austral, la sal queda excluida del hielo y el agua superficial se vuelve excepcionalmente densa. Tan densa que <strong>cae hacia el fondo del océano</strong>, formando el Agua de Fondo Antártica (AABW).</p>
+    <p>Esta masa rellena el fondo de todas las cuencas oceánicas. Con –0.8 °C y 34.65 psu, es la más fría y densa del planeta. Puede permanecer en las profundidades durante siglos antes de volver a la superficie.</p>
+
+    <div class="stat-box" style="border-left-color: var(--aabw);">
+      <div class="stat-item">
+        <div class="stat-value" style="color:var(--aabw)">–0.8 °C</div>
+        <div class="stat-label">Temperatura</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" style="color:var(--aabw)">34.65</div>
+        <div class="stat-label">Salinidad (psu)</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" style="color:var(--aabw)">&gt; 4,000 m</div>
+        <div class="stat-label">Profundidad</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-block">
+    <div id="map-aabw" class="leaflet-map"></div>
+  </div>
+  <div class="map-caption">Mar de Weddell (Antarctica), zona de formación principal del AABW. También se forma en el Mar de Ross (no visible en este encuadre).</div>
+</article>
+
+<div class="divider"></div>
+
+<!-- ── CIRCULACIÓN BANNER ─────────────────────────── -->
+<div id="circ" class="ch-banner" style="background: linear-gradient(135deg,#0f172a 0%,#1e3a5f 50%,#0369a1 100%)">
+  <div class="ch-sub">Sistema global</div>
+  <h2>La Cinta Transportadora</h2>
+</div>
+
+<article>
+  <div class="story-body">
+    <p class="section-kicker">Circulación termohalina</p>
+    <h2>Todas estas masas están conectadas</h2>
+    <p>La <strong>circulación termohalina</strong> — impulsada por diferencias de temperatura y salinidad — conecta todas estas masas de agua en un ciclo global. En superficie, corrientes cálidas como la del Golfo llevan calor hacia los polos. En profundidad, las masas frías y densas fluyen en sentido contrario.</p>
+    <p>Este sistema regula el clima de regiones enteras, transporta nutrientes al océano superficial, y controla cuánto CO₂ puede absorber el mar. El tiempo de residencia de estas masas en el océano profundo supera los <strong>1000 años</strong>.</p>
+    <p>El calentamiento global está alterando este sistema. El AABW se está calentando. El NADW podría debilitarse. Las consecuencias serán globales — por eso monitorear estas masas de agua con perfiladores <strong>Argo</strong> y satélites es una prioridad científica urgente.</p>
+  </div>
+
+  <div class="map-block">
+    <div id="map-circ" class="leaflet-map"></div>
+  </div>
+  <div class="map-caption">Vista global mostrando las zonas de formación y extensión de las cuatro masas de agua principales.</div>
+</article>
+
+<!-- ── FOOTER ────────────────────────────────────── -->
+<footer>
+  <p>Elaborado por <strong>Daniela Risaro</strong>, oceanógrafa física</p>
+  <p><a href="/portfolio/">← Volver al portfolio</a></p>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+/* ── TILES ────────────────────────────────────────── */
+const OCEAN = 'https://server.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Base/MapServer/tile/{z}/{y}/{x}';
+const OCEAN_REF = 'https://server.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Reference/MapServer/tile/{z}/{y}/{x}';
+const SAT   = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}';
+const ATTR  = '&copy; Esri';
+
+/* ── WATER MASS SHAPES (lat/lng) ──────────────────── */
+const WM = {
+  SAMW: {
+    color: '#0891b2',
+    polys: [
+      [[-35,-55],[-36,-40],[-40,-5],[-44,17],[-48,16],[-50,6],[-50,-8],[-48,-30],[-44,-50],[-40,-58],[-35,-57]],
+      [[-35,20],[-38,55],[-42,80],[-48,84],[-50,75],[-48,40],[-43,20]],
+      [[-35,-150],[-38,-110],[-42,-80],[-48,-70],[-50,-80],[-48,-115],[-40,-148]]
+    ]
+  },
+  AAIW: {
+    color: '#0284c7',
+    polys: [
+      [[-50,-58],[-50,-35],[-50,-5],[-50,18],[-54,18],[-56,5],[-56,-15],[-56,-40],[-55,-58]],
+      [[-20,-46],[-5,-43],[12,-40],[20,-37],[20,-32],[10,-35],[-5,-38],[-20,-41],[-32,-44],[-42,-46],[-52,-50],[-54,-54],[-50,-57],[-38,-52],[-25,-48]]
+    ]
+  },
+  NADW: {
+    color: '#1d4ed8',
+    polys: [
+      [[55,-65],[62,-58],[66,-52],[68,-48],[63,-46],[57,-54],[54,-62]],
+      [[62,-38],[64,-22],[67,-10],[70,-2],[73,5],[77,-4],[78,-18],[74,-30],[68,-38],[64,-40]],
+    ]
+  },
+  AABW: {
+    color: '#7c3aed',
+    polys: [
+      [[-72,-66],[-70,-52],[-69,-38],[-70,-22],[-72,-12],[-74,-6],[-76,-16],[-77,-32],[-77,-48],[-75,-62],[-72,-68]],
+      [[-72,155],[-72,168],[-75,175],[-77,168],[-77,155],[-74,152]]
+    ]
+  }
+};
+
+/* ── PULSE MARKER ─────────────────────────────────── */
+function pulseMk(latlng, color) {
+  const html = `<div style="position:relative;width:16px;height:16px">
+    <div style="position:absolute;top:4px;left:4px;width:8px;height:8px;border-radius:50%;background:${color}"></div>
+    <div style="position:absolute;inset:0;border-radius:50%;border:2px solid ${color};animation:ring 2.2s ease-out infinite"></div>
+  </div>`;
+  return L.marker(latlng, { icon: L.divIcon({ html, className:'', iconSize:[16,16], iconAnchor:[8,8] }) });
+}
+
+const style = document.createElement('style');
+style.textContent = '@keyframes ring{0%{transform:scale(1);opacity:.9}100%{transform:scale(3);opacity:0}}';
+document.head.appendChild(style);
+
+/* ── FLOW LINES ───────────────────────────────────── */
+const FLOWS = [
+  { pts:[[55,-44],[30,-37],[5,-29],[-20,-21],[-42,-14],[-58,-8]], color:'#3b82f6' },
+  { pts:[[-73,-37],[-55,-29],[-30,-22],[-5,-16],[20,-10]],        color:'#a78bfa' },
+  { pts:[[-54,-35],[-35,-28],[-12,-22],[12,-16],[20,-12]],         color:'#7dd3fc' }
+];
+
+/* ── MAKE MAP ─────────────────────────────────────── */
+function makeMap(id, center, zoom, wm, opts={}) {
+  const m = L.map(id, { center, zoom, zoomControl: true, scrollWheelZoom: false, ...opts });
+  L.tileLayer(OCEAN, { attribution: ATTR, maxZoom: 13 }).addTo(m);
+  L.tileLayer(OCEAN_REF, { opacity: 0.5, maxZoom: 13 }).addTo(m);
+
+  if (wm === 'ALL') {
+    Object.keys(WM).forEach(k => {
+      WM[k].polys.forEach(c =>
+        L.polygon(c, { color: WM[k].color, weight: 1.5, fillColor: WM[k].color, fillOpacity: 0.22, opacity: 0.8 }).addTo(m)
+      );
+    });
+    FLOWS.forEach(({ pts, color }) => {
+      let off = 0;
+      const pl = L.polyline(pts, { color, weight: 2, opacity: .65, dashArray: '6 6' }).addTo(m);
+      setInterval(() => { off -= 2; pl.setStyle({ dashOffset: String(off) }); }, 55);
+    });
+  } else if (WM[wm]) {
+    WM[wm].polys.forEach(c =>
+      L.polygon(c, { color: WM[wm].color, weight: 1.5, fillColor: WM[wm].color, fillOpacity: 0.25, opacity: 0.85 }).addTo(m)
+    );
+    // Formation markers
+    const centers = { SAMW:[[-43,-20]], AAIW:[[-53,-30],[-8,-35]], NADW:[[61,-54],[68,-10]], AABW:[[-74,-40]] };
+    (centers[wm]||[]).forEach(p => pulseMk(p, WM[wm].color).addTo(m));
+  }
+  return m;
+}
+
+/* ── HERO MAP ─────────────────────────────────────── */
+const heroMap = L.map('hero-map', { center:[0,-20], zoom:2, zoomControl:false,
+  dragging:false, scrollWheelZoom:false, touchZoom:false, doubleClickZoom:false });
+L.tileLayer(SAT, { attribution: ATTR, maxZoom:13 }).addTo(heroMap);
+
+/* ── LAZY INIT INLINE MAPS ───────────────────────── */
+const mapDefs = {
+  'map-samw': { center:[-43,-10], zoom:3, wm:'SAMW' },
+  'map-aaiw': { center:[-25,-28], zoom:3, wm:'AAIW' },
+  'map-nadw': { center:[62,-30],  zoom:3, wm:'NADW' },
+  'map-aabw': { center:[-72,-38], zoom:4, wm:'AABW' },
+  'map-circ': { center:[-5,-20],  zoom:2, wm:'ALL'  }
+};
+
+const initedMaps = {};
+const lazyObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const id = e.target.id;
+    if (!initedMaps[id] && mapDefs[id]) {
+      const { center, zoom, wm } = mapDefs[id];
+      initedMaps[id] = makeMap(id, center, zoom, wm);
+      lazyObs.unobserve(e.target);
+    }
+  });
+}, { rootMargin: '200px' });
+
+Object.keys(mapDefs).forEach(id => {
+  const el = document.getElementById(id);
+  if (el) lazyObs.observe(el);
+});
+
+/* ── NAV HIGHLIGHT ───────────────────────────────── */
+const navLinks = Array.from(document.querySelectorAll('.nav-chapters a'));
+const sections = navLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+const navObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navLinks.forEach(a => a.classList.remove('active'));
+      const link = document.querySelector(`.nav-chapters a[href="#${e.target.id}"]`);
+      if (link) link.classList.add('active');
+    }
+  });
+}, { threshold: 0.3 });
+
+sections.forEach(s => navObs.observe(s));
+
+/* ── Image compare slider ─────────────────────── */
+document.querySelectorAll('.img-compare').forEach(container => {
+  const after  = container.querySelector('.img-after');
+  const handle = container.querySelector('.compare-handle');
+  let dragging = false;
+
+  function setPos(clientX) {
+    const rect = container.getBoundingClientRect();
+    const pct  = Math.max(3, Math.min(97, (clientX - rect.left) / rect.width * 100));
+    after.style.clipPath  = `inset(0 ${100 - pct}% 0 0)`;
+    handle.style.left     = pct + '%';
+  }
+
+  container.addEventListener('mousedown',  e => { dragging = true; setPos(e.clientX); });
+  container.addEventListener('touchstart', e => { dragging = true; setPos(e.touches[0].clientX); }, { passive: true });
+  window.addEventListener('mousemove',  e => { if (dragging) setPos(e.clientX); });
+  window.addEventListener('touchmove',  e => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
+  window.addEventListener('mouseup',  () => dragging = false);
+  window.addEventListener('touchend', () => dragging = false);
+});
+</script>
+</body>
+</html>
