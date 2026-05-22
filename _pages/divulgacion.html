@@ -5,71 +5,155 @@ permalink: /divulgacion/
 ---
 
 <style>
-  .outreach-list {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+  .outreach-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
     margin-top: 1.5rem;
   }
 
-  .outreach-item {
-    display: flex;
-    gap: 1.5rem;
+  .outreach-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    display: block;
     text-decoration: none;
-    color: inherit;
-    border-left: 4px solid #52adc8;
-    padding: 1.2rem 1.5rem;
-    background: #fafafa;
-    border-radius: 0 6px 6px 0;
-    transition: background 0.2s ease, border-color 0.2s ease;
+    background: #111;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
   }
 
-  .outreach-item:hover {
-    background: #f0f7fb;
-    border-color: #3a8fa8;
+  .outreach-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease, opacity 0.4s ease;
   }
 
-  .outreach-item__label {
-    font-size: 0.7rem;
+  .outreach-card:hover .outreach-card__img {
+    transform: scale(1.04);
+    opacity: 0.35;
+  }
+
+  .outreach-card__footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 0.85rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: opacity 0.3s ease;
+  }
+
+  .outreach-card:hover .outreach-card__footer {
+    opacity: 0;
+  }
+
+  .outreach-card__title {
+    font-size: 1rem;
     font-weight: 700;
-    letter-spacing: 0.1em;
+    color: #222;
+    margin: 0 0 0.15rem 0;
+  }
+
+  .outreach-card__label {
+    font-size: 0.72rem;
+    color: #888;
+    margin: 0;
     text-transform: uppercase;
-    color: #52adc8;
-    margin-bottom: 0.4rem;
+    letter-spacing: 0.05em;
   }
 
-  .outreach-item__title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin: 0 0 0.5rem 0;
-    color: #333;
+  .outreach-card__btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #52adc8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
   }
 
-  .outreach-item__desc {
-    font-size: 0.95rem;
-    color: #555;
+  .outreach-card__btn svg {
+    stroke: white;
+    fill: none;
+    width: 14px;
+    height: 14px;
+    stroke-width: 2.5;
+  }
+
+  .outreach-card__desc {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+  }
+
+  .outreach-card:hover .outreach-card__desc {
+    opacity: 1;
+  }
+
+  .outreach-card__desc p {
+    color: white;
+    font-size: 1rem;
     line-height: 1.6;
     margin: 0;
+    font-weight: 500;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  }
+
+  @media (max-width: 600px) {
+    .outreach-grid { grid-template-columns: 1fr; }
   }
 </style>
 
 <h2>Outreach</h2>
 
-<div class="outreach-list">
+<div class="outreach-grid">
 
-  <a class="outreach-item" href="/argo-scroll/">
-    <div>
-      <div class="outreach-item__label">Historia visual</div>
-      <h3 class="outreach-item__title">¿Qué hacen 4000 robots en el océano?</h3>
-      <p class="outreach-item__desc">Se tiran al agua, se hunden hasta 2000 metros, derivan con las corrientes, y vuelven a la superficie a contarnos todo. Son las boyas Argo, y esta es su historia.</p>
+  <a class="outreach-card" href="/argo-scroll/">
+    <img class="outreach-card__img"
+         src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=800&h=600&fit=crop"
+         alt="Océano">
+    <div class="outreach-card__desc">
+      <p>Una historia visual e interactiva sobre las boyas Argo: cómo se mueven, qué miden y qué nos dicen sobre el océano.</p>
+    </div>
+    <div class="outreach-card__footer">
+      <div>
+        <h3 class="outreach-card__title">¿Qué hacen 4000 robots en el océano?</h3>
+        <p class="outreach-card__label">Historia visual</p>
+      </div>
+      <div class="outreach-card__btn">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
     </div>
   </a>
 
-  <a class="outreach-item" href="/Tacitas/">
-    <div>
-      <div class="outreach-item__label">Guía porteña</div>
-      <h3 class="outreach-item__title">Tacitas</h3>
-      <p class="outreach-item__desc">Una guía a los cafés porteños: espresso, jarrito, cortado, café con leche, lágrima, capuchino, americano y submarino. Nada de flat white.</p>
+  <a class="outreach-card" href="/Tacitas/">
+    <img class="outreach-card__img"
+         src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&h=600&fit=crop"
+         alt="Café">
+    <div class="outreach-card__desc">
+      <p>Una guía a los cafés porteños: espresso, jarrito, cortado, café con leche, lágrima, capuchino, americano y submarino. Nada de flat white.</p>
+    </div>
+    <div class="outreach-card__footer">
+      <div>
+        <h3 class="outreach-card__title">Tacitas</h3>
+        <p class="outreach-card__label">Guía porteña</p>
+      </div>
+      <div class="outreach-card__btn">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
     </div>
   </a>
 
