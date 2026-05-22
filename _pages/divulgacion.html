@@ -1,36 +1,75 @@
 ---
 layout: default
-title: Divulgación
+title: Outreach
 permalink: /divulgacion/
 ---
 
+<style>
+  .outreach-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .outreach-item {
+    display: flex;
+    gap: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    border-left: 4px solid #52adc8;
+    padding: 1.2rem 1.5rem;
+    background: #fafafa;
+    border-radius: 0 6px 6px 0;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .outreach-item:hover {
+    background: #f0f7fb;
+    border-color: #3a8fa8;
+  }
+
+  .outreach-item__label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #52adc8;
+    margin-bottom: 0.4rem;
+  }
+
+  .outreach-item__title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    color: #333;
+  }
+
+  .outreach-item__desc {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+  }
+</style>
+
 <h2>Outreach</h2>
 
-<div class="portfolio-grid">
+<div class="outreach-list">
 
-  <a class="portfolio-card" href="/argo-scroll/">
-    <div class="portfolio-card__image--placeholder">Oceanografía</div>
-    <div class="portfolio-card__body">
-      <h3 class="portfolio-card__title">¿Qué hacen 4000 robots en el océano?</h3>
-      <p class="portfolio-card__excerpt">Se tiran al agua, se hunden hasta 2000 metros, se quedan quietos un rato, y suben a contarnos todo. Son las boyas Argo, y esta es su historia.</p>
-      <div class="portfolio-card__tags">
-        <span class="portfolio-card__tag">🌊 Océano</span>
-        <span class="portfolio-card__tag">🤖 Robots</span>
-        <span class="portfolio-card__tag">📖 Historia visual</span>
-      </div>
+  <a class="outreach-item" href="/argo-scroll/">
+    <div>
+      <div class="outreach-item__label">Historia visual</div>
+      <h3 class="outreach-item__title">¿Qué hacen 4000 robots en el océano?</h3>
+      <p class="outreach-item__desc">Se tiran al agua, se hunden hasta 2000 metros, derivan con las corrientes, y vuelven a la superficie a contarnos todo. Son las boyas Argo, y esta es su historia.</p>
     </div>
   </a>
 
-  <a class="portfolio-card" href="/Tacitas/">
-    <div class="portfolio-card__image--placeholder">Divulgación</div>
-    <div class="portfolio-card__body">
-      <h3 class="portfolio-card__title">Tacitas ☕</h3>
-      <p class="portfolio-card__excerpt">Una guía para no perderse en el menú de un bar porteño. ¿Qué diferencia hay entre un cortado y una lágrima? ¿Por qué el submarino es un clásico? Todo acá, sin flat whites.</p>
-      <div class="portfolio-card__tags">
-        <span class="portfolio-card__tag">☕ Café</span>
-        <span class="portfolio-card__tag">🇦🇷 Buenos Aires</span>
-        <span class="portfolio-card__tag">🍫 Submarino</span>
-      </div>
+  <a class="outreach-item" href="/Tacitas/">
+    <div>
+      <div class="outreach-item__label">Guía porteña</div>
+      <h3 class="outreach-item__title">Tacitas</h3>
+      <p class="outreach-item__desc">Una guía a los cafés porteños: espresso, jarrito, cortado, café con leche, lágrima, capuchino, americano y submarino. Nada de flat white.</p>
     </div>
   </a>
 
