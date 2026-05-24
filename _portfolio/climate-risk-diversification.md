@@ -2,7 +2,7 @@
 layout: default
 title: "Climate Risk Diversification Tool"
 excerpt: "An interactive tool for reinsurers to build and evaluate diversified climate risk portfolios across Latin America, combining historical event data with exposure layers."
-date: 2024-05-01
+date: 2025-06-04
 permalink: /portfolio/climate-risk-diversification/
 category: "Climate Risk"
 tags:

@@ -2,7 +2,7 @@
 layout: default
 title: "SAR Flood Detection"
 excerpt: "Using synthetic aperture radar imagery to identify and map flooded areas during extreme events."
-date: 2024-01-01
+date: 2025-06-03
 permalink: /portfolio/sar-flood-detection/
 category: "Remote Sensing"
 tags:

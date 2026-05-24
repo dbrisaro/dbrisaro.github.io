@@ -2,7 +2,7 @@
 layout: default
 title: "Climate Variability Dashboard"
 excerpt: "An interactive dashboard tracking key climate and oceanic oscillations, with forecasts and SST anomaly maps focused on Latin America."
-date: 2024-02-01
+date: 2025-06-01
 permalink: /portfolio/climate-dashboard/
 external_url: "https://climate-variability-dashboard.streamlit.app/"
 category: "Data Science"

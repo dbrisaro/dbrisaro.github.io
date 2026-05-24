@@ -2,7 +2,7 @@
 layout: default
 title: "Agricultural Drought Monitor"
 excerpt: "An interactive tool combining multiple drought indices and remote sensing products to monitor agricultural drought across key regions of South America."
-date: 2024-03-01
+date: 2025-06-02
 permalink: /portfolio/agro-application/
 category: "Applications"
 tags:
