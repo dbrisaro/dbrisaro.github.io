@@ -1,8 +1,9 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Daniela Risaro"
-title_separator          : "\n"
+title                    : "Daniela Risaro | Climate Data Scientist"
+title_separator          : " | "
+canonical_url            : "https://danielarisaro.ar"
 name                     : &name "Daniela Belén Risaro"
 description              : &description "Climate Data Scientist | PhD in Atmospheric and Oceanic Sciences, specializing in data science and remote sensing for climate risk assessment."
 url                      : https://danielarisaro.ar
