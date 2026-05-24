@@ -5,7 +5,7 @@ title                    : "Daniela Risaro"
 title_separator          : "\n"
 name                     : &name "Daniela Belén Risaro"
 description              : &description "Climate Data Scientist | PhD in Atmospheric and Oceanic Sciences, specializing in data science and remote sensing for climate risk assessment."
-url                      : https://dbrisaro.github.io 
+url                      : https://danielarisaro.ar
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "dbrisaro/dbrisaro.github.io"
 
