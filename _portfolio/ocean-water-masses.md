@@ -40,4 +40,4 @@ Built with Leaflet.js and a scroll-driven narrative, the map updates as you read
 
 These water masses connect all ocean basins through thermohaline circulation — a slow conveyor belt driven by temperature and salinity differences. They regulate regional climates, distribute oxygen and nutrients, and absorb a significant fraction of atmospheric CO₂. Monitoring their changes is essential for understanding climate futures.
 
-<a href="/storymaps/masas-de-agua/index.html" class="btn btn--primary">Open Story Map →</a>
+<a href="/storymaps/masas-de-agua/" class="btn btn--primary">Open Story Map →</a>
