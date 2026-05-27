@@ -13,5 +13,4 @@ tags:
   - Tutorial
   - xarray
   - cartopy
-image: /images/argo-tutorial-cover.png
 ---
