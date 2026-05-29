@@ -15,7 +15,10 @@ tags:
   - Interactive
 ---
 
-<a href="/portfolio/" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.85rem;color:var(--teal);text-decoration:none;margin-bottom:1.5rem;">← Portfolio</a>
+<script>
+  history.replaceState(null, '', '/portfolio/');
+  history.pushState(null, '', window.location.pathname + window.location.search);
+</script>
 
 <div class="project-header">
   <h1>Climate Industry Landscape</h1>
