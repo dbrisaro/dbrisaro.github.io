@@ -15,11 +15,6 @@ tags:
   - Interactive
 ---
 
-<script>
-  history.replaceState(null, '', '/portfolio/');
-  history.pushState(null, '', window.location.pathname + window.location.search);
-</script>
-
 <div class="project-header">
   <h1>Climate Industry Landscape</h1>
   <div class="project-tags">
