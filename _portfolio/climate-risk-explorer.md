@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Climate Risk Explorer"
+title: "Climate Industry Landscape"
 excerpt: "An interactive map of the climate risk and Earth observation industry: 46 companies plotted by scientific depth and finance focus, with filters, detail panels, and a landscape view by archetype."
 date: 2026-05-28
 permalink: /portfolio/climate-risk-explorer/
@@ -16,13 +16,13 @@ tags:
 ---
 
 <div class="project-header">
-  <h1>Climate Risk Explorer</h1>
+  <h1>Climate Industry Landscape</h1>
   <div class="project-tags">
     {% for tag in page.tags %}
     <span class="project-tag">{{ tag }}</span>
     {% endfor %}
   </div>
-  <p style="margin-top: 1rem;"><a href="https://danielarisaro.ar/climate-careers/" target="_blank" class="btn">Open Explorer</a></p>
+  <p style="margin-top: 1rem;"><a href="https://danielarisaro.ar/climate-careers/" target="_blank" class="btn">Open Landscape</a></p>
 </div>
 
 ## Overview
