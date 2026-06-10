@@ -588,6 +588,64 @@ a.button:hover {
 
   .wrapper--home .sidebar {
     display: block;
+    padding: 1rem 1.2rem;
+  }
+
+  .wrapper--home .author-profile {
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "photo name"
+      "photo icons";
+    align-items: center;
+    gap: 0.3rem 1rem;
+    text-align: left;
+  }
+
+  .wrapper--home .author__avatar {
+    grid-area: photo;
+    width: 72px;
+    height: 72px;
+    margin: 0;
+  }
+
+  .wrapper--home .author__name {
+    grid-area: name;
+    font-size: 0.9rem;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  .wrapper--home .author__bio {
+    display: none;
+  }
+
+  .wrapper--home .author__urls {
+    grid-area: icons;
+    display: flex;
+    flex-direction: row;
+    gap: 0.85rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  .wrapper--home .author__urls li {
+    border: none;
+    padding: 0;
+  }
+
+  .wrapper--home .author__urls li.author__info {
+    display: none;
+  }
+
+  .wrapper--home .author__urls li a {
+    font-size: 0;
+  }
+
+  .wrapper--home .author__urls li a i {
+    font-size: 1.15rem;
+    color: var(--teal-dark);
   }
 }
 
