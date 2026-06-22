@@ -5,7 +5,7 @@ excerpt: "Live comparison of 2026 El Niño conditions against every major ENSO e
 date: 2026-06-11
 permalink: /portfolio/enso-tracker/
 category: "Climate"
-external_url: /enso_tracker.html
+external_url: /portfolio/enso-tracker/
 tags:
   - ENSO
   - El Niño
