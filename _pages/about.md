@@ -23,15 +23,19 @@ If you would like to collaborate, reach me at [dbrisaro@gmail.com](mailto:dbrisa
 
 <table class="news-table">
   <tr>
+    <td>Jun 2026</td>
+    <td>Published an updated version of the <a href="/enso_tracker.html"><strong>ENSO Tracker</strong></a>, now including ONI/RONI analogue rankings, SST anomaly maps, and corrected SOI data from NOAA CPC.</td>
+  </tr>
+  <tr>
+    <td>Apr 2026</td>
+    <td>Published a new blog post, <a href="/posts/2026/04/climatologia/"><strong>¿Cómo se calcula una climatología?</strong></a>, exploring how climatologies are computed and why the standard method has its caveats.</td>
+  </tr>
+  <tr>
     <td>Feb 2025</td>
-    <td>Defended my Master's thesis in Public Policy at Universidad Torcuato Di Tella.</td>
+    <td>Defended my <a href="/publication/2025-02-01-mpp-thesis"><strong>Master's thesis in Public Policy</strong></a> at Universidad Torcuato Di Tella.</td>
   </tr>
   <tr>
     <td>Jan 2024</td>
-    <td>Joined <strong>Suyana - Climate Insurance</strong> as Lead Climate Scientist, developing parametric models for climate risk.</td>
-  </tr>
-  <tr>
-    <td>Jul 2022</td>
-    <td>Started as Senior Data Scientist at <strong>Fundar</strong>, leading open-source climate data initiatives.</td>
+    <td>Joined <a href="https://suyana.io"><strong>Suyana - Climate Insurance</strong></a> as Principal Climate Scientist, developing parametric models for climate risk.</td>
   </tr>
 </table>
