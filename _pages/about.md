@@ -24,7 +24,7 @@ If you would like to collaborate, reach me at [dbrisaro@gmail.com](mailto:dbrisa
 <table class="news-table">
   <tr>
     <td>Jun 2026</td>
-    <td>Published an updated version of the <a href="/enso_tracker.html"><strong>ENSO Tracker</strong></a>, now including ONI/RONI analogue rankings, SST anomaly maps, and corrected SOI data from NOAA CPC.</td>
+    <td>Published an updated version of the <a href="/portfolio/enso-tracker/"><strong>ENSO Tracker</strong></a>, now including ONI/RONI analogue rankings, SST anomaly maps, and corrected SOI data from NOAA CPC.</td>
   </tr>
   <tr>
     <td>Apr 2026</td>
