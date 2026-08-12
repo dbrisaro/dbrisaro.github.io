@@ -79,6 +79,12 @@
             {{ site.author.location }}
           </li>
           {% endif %}
+          {% if site.author.location_current %}
+          <li class="author__info">
+            <i class="fas fa-fw fa-plane" aria-hidden="true"></i>
+            {{ site.author.location_current }}
+          </li>
+          {% endif %}
           {% if site.author.employer %}
           <li class="author__info">
             <i class="fas fa-fw fa-building-columns" aria-hidden="true"></i>

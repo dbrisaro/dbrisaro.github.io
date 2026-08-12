@@ -128,3 +128,11 @@ redirect_from:
     <p class="cv-entry__sub">Franco-Argentine Institute for Climate Studies and Its Impacts, coordinating working groups and facilitating dialogue.</p>
   </div>
 </div>
+
+<div class="cv-entry">
+  <div class="cv-entry__date">2020&ndash;2022</div>
+  <div class="cv-entry__body">
+    <p class="cv-entry__title">Youth Ambassador, European Union</p>
+    <p class="cv-entry__sub">Argentine representative in the All-Atlantic Ocean Youth Ambassadors programme, promoting sustainable ocean development and stewardship through science diplomacy, community outreach, and policy engagement. Participated in the Youth Ambassador Forum in Brussels, the Summer School in Washington D.C., and the All-Atlantic Data Enterprise 2030 Stakeholders Workshop in Buenos Aires, contributing to dialogue on Atlantic ocean data infrastructure and data sharing across the scientific community.</p>
+  </div>
+</div>
