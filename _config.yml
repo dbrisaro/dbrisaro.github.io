@@ -153,6 +153,9 @@ exclude:
   - vendor
   - markdown_generator
   - talkmap
+  # legacy academicpages styles, replaced by design/style.css and loaded by nothing
+  - assets/css/main.scss
+  - _sass
 keep_files:
   - .git
   - .svn
