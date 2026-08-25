@@ -11,7 +11,7 @@ redirect_from:
 
 Curiosity is what led me to become a scientist, and the ocean was my first obsession.
 
-I hold a degree in Physical Oceanography and a PhD in Atmospheric and Oceanic Sciences from the University of Buenos Aires, and a Master's in Public Policy from Universidad Torcuato Di Tella. I am a Climate Data Scientist working at the intersection of Earth observation, climate risk, and parametric insurance. My core work is ensuring the scientific robustness of climate risk products: selecting the right data sources, validating methods, and translating satellite science into models that hold up under scrutiny. I lead a technical team building parametric products for frost, drought, heatwaves, storm surges, and extreme waves across Latin America, using MODIS, VIIRS, AVHRR, and Sentinel imagery, machine learning, and reanalysis datasets like ERA5 and CMIP6.
+I hold a degree in Physical Oceanography and a PhD in Atmospheric and Oceanic Sciences from the University of Buenos Aires, and a Master's in Public Policy from Universidad Torcuato Di Tella. With more than ten years across research and applied climate risk, I work at the intersection of Earth observation, climate risk, and parametric insurance. My core work is ensuring the scientific robustness of climate risk products: selecting the right data sources, validating methods, and translating satellite science into models that hold up under scrutiny. I lead a technical team building parametric products for frost, drought, heatwaves, storm surges, and extreme waves across Latin America, using MODIS, VIIRS, AVHRR, and Sentinel imagery, machine learning, and reanalysis datasets like ERA5 and CMIP6. That also means satellite sargassum monitoring and forecasting, catastrophe modelling and portfolio construction, and defending model design to reinsurers and development banks.
 
 I have published peer-reviewed research on ocean variability and climate change, and I teach data science and quantitative methods in executive programs at Universidad Torcuato Di Tella.
 
@@ -35,7 +35,11 @@ If you would like to collaborate, reach me at [dbrisaro@gmail.com](mailto:dbrisa
     <td>Defended my <a href="/publication/2025-02-01-mpp-thesis"><strong>Master's thesis in Public Policy</strong></a> at Universidad Torcuato Di Tella.</td>
   </tr>
   <tr>
+    <td>Jan 2025</td>
+    <td>Became <strong>Principal Climate Scientist</strong> at <a href="https://suyana.io">Suyana - Climate Insurance</a>, leading the team behind hazard index design across all parametric products.</td>
+  </tr>
+  <tr>
     <td>Jan 2024</td>
-    <td>Joined <a href="https://suyana.io"><strong>Suyana - Climate Insurance</strong></a> as Principal Climate Scientist, developing parametric models for climate risk.</td>
+    <td>Joined <a href="https://suyana.io"><strong>Suyana - Climate Insurance</strong></a> as Senior Climate Scientist, developing parametric models for climate risk.</td>
   </tr>
 </table>
