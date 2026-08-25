@@ -407,6 +407,16 @@ a.button:hover {
   color: #666;
 }
 
+ul.cv-entry__detail {
+  margin: 0.35rem 0 0;
+  padding-left: 1.1rem;
+}
+
+ul.cv-entry__detail li {
+  margin-bottom: 0.3rem;
+  line-height: 1.5;
+}
+
 /* ── Portfolio grid ── */
 
 .portfolio-grid {

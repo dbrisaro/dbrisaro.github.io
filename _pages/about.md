@@ -38,8 +38,4 @@ If you would like to collaborate, reach me at [dbrisaro@gmail.com](mailto:dbrisa
     <td>Jan 2025</td>
     <td>Became <strong>Principal Climate Scientist</strong> at <a href="https://suyana.io">Suyana - Climate Insurance</a>, leading the team behind hazard index design across all parametric products.</td>
   </tr>
-  <tr>
-    <td>Jan 2024</td>
-    <td>Joined <a href="https://suyana.io"><strong>Suyana - Climate Insurance</strong></a> as Senior Climate Scientist, developing parametric models for climate risk.</td>
-  </tr>
 </table>
